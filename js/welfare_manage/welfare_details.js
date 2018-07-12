@@ -11,11 +11,11 @@ for (var i = 0; i < spans.length; i++) {
 function change(obj) {
     for (var i = 0; i < spans.length; i++) {
         if (spans[i] == obj) {
-            spans[i].className = "cur";
-            divs[i].className = "cur";
+            $("#new_title span").eq(i).addClass('current');
+            $("#new_detail div").eq(i).addClass('current');
         } else {
-            spans[i].className = "";
-            divs[i].className = "";
+            $("#new_title span").eq(i).removeClass('current');
+            $("#new_detail div").eq(i).removeClass('current');
         }
     }
 }
@@ -33,20 +33,22 @@ for (let i = 0; i < spans.length; i++) {
 $(function() {
     $("#sortable").sortable({
         containment: '#sortable',
+        cancel: '#four'
     });
-    $("#sortable").disableSelection();
+    $("#four").disableSelection();
 });
 //上传图片
 var upload_img = document.getElementById('upload_img');
 var ul = document.getElementById('sortable');
 var lis = document.getElementById('sortable').getElementsByTagName('li');
+var last_li = document.getElementById('last_li');
 
 function addImage() {
     new_input.click();
 }
 
 new_input.addEventListener('change', function() {
-    if (lis.length >= 6) return;
+    if (lis.length >= 7) return;
     var reader = new FileReader();
     reader.readAsDataURL(this.files[0]);
     reader.onloadend = function(e) {
@@ -56,8 +58,8 @@ new_input.addEventListener('change', function() {
         li.appendChild(span);
         li.style.background = "url('" + e.target.result + "') no-repeat";
         li.style.backgroundSize = "100% 100%";
-        ul.appendChild(li);
-        span.style.display = 'block';
+        ul.insertBefore(li, last_li);
+        // span.style.display = 'block';
         span.addEventListener('click', function() {
             this.parentNode.parentNode.removeChild(this.parentNode);
         })

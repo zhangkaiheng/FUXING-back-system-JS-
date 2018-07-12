@@ -44,7 +44,7 @@ input {
     display: none;
 }
 
-#new_welfare .new_detail div.cur {
+#new_welfare .new_detail div.current {
     display: block;
 }
 
@@ -164,55 +164,56 @@ input {
     background: url('../../icons/five_orange.png') no-repeat;
 }
 
-#new_welfare .new_detail .advanced_set p {
+
+/* #new_welfare .new_detail .advanced_set p {
+    height: 40px;
+    margin-bottom: 31px;
+} */
+
+#new_welfare .new_detail .advanced_set section {
     height: 40px;
     margin-bottom: 31px;
 }
 
-#new_welfare .new_detail .advanced_set p i {
+#new_welfare .new_detail .advanced_set section i {
     color: #F86F4D;
 }
 
-#new_welfare .new_detail .advanced_set p span {
+#new_welfare .new_detail .advanced_set section span {
     line-height: 40px;
 }
 
-#new_welfare .new_detail .advanced_set p input {
+#new_welfare .new_detail .advanced_set section input {
     line-height: 40px;
     height: 100%;
     margin-top: 5px;
 }
 
-#new_welfare .new_detail .advanced_set p:nth-of-type(4) {
+#new_welfare .new_detail .advanced_set .new_photo {
+    height: auto;
+    overflow: hidden;
+  
+    margin-bottom: 0;
+    /* display: inline-block; */
+}
+
+#new_welfare .new_detail .advanced_set .new_photo span:nth-of-type(1) {
     float: left;
+    line-height: 105px;
 }
 
-#new_welfare .new_detail .advanced_set .new_photo section {
+#new_welfare .new_detail .advanced_set .new_photo ul {
     float: left;
-}
-
-#new_welfare .new_detail .advanced_set .new_photo section a {
-    display: block;
-    width: 110px;
-    height: 110px;
-}
-
-#new_welfare .new_detail .advanced_set .new_photo section {
-    margin-right: 22px;
-    display: inline-block;
-    width: 110px;
-    height: 110px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    border: solid 1px #dddddd;
-    line-height: 110px;
-    text-align: center;
-    position: relative;
-    vertical-align: middle;
+    margin-top: 5px;
+    margin-left: 5px;
+    /* margin-bottom: 31px; */
+    width: 80%;
+    /* overflow: hidden; */
+    /* display: flex; */
 }
 
 #new_welfare .new_detail .advanced_set .new_photo ul li {
-    display: inline-block;
+    float: left;
     width: 110px;
     height: 110px;
     background-color: #ffffff;
@@ -220,9 +221,19 @@ input {
     border: solid 1px #dddddd;
     line-height: 110px;
     text-align: center;
-    vertical-align: middle;
     position: relative;
     margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#new_welfare .new_detail .advanced_set .new_photo ul li a {
+    width: 110px;
+    height: 110px;
+    display: block;
+}
+
+#new_welfare .new_detail .advanced_set .new_photo ul li:hover>span {
+    display: block;
 }
 
 #new_welfare .new_detail .advanced_set .new_photo ul li span {
@@ -232,10 +243,15 @@ input {
     background: #969393;
     border-radius: 50%;
     text-align: center;
-    line-height: 20px;
+    line-height: 20px !important;
     position: absolute;
     top: -5px;
     right: -5px;
     cursor: pointer;
     color: white;
 }
+
+
+/* #new_welfare .new_detail .advanced_set .new_photo section:nth-child(4) {
+    margin-top: 50px;
+} */
