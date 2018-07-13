@@ -14,21 +14,25 @@ i {
 input {
     outline: none;
 }
-
+#new_welfare .new_phone{
+  background: url('../../images/phone_bg.png') no-repeat 45px 0px;
+  height: 662px;
+}
 #new_title {
     height: 84px;
     border-bottom: 1px solid #ECEAEA;
-    /* position: absolute; */
-    top: 130px;
     text-align: center;
     line-height: 83px;
     color: #BCBCBC;
     background-color: white;
+  position: relative;
+
 }
 
 #new_detail {
     padding-left: 62px;
     padding-top: 31px;
+    overflow-y: auto;
 }
 
 #new_welfare .new_title span {
@@ -250,8 +254,50 @@ input {
     cursor: pointer;
     color: white;
 }
+#new_welfare .new_detail .advanced_set section input[type='radio']{
+  display: none;
+  clip: rect(0, 0, 0, 0);
+}
+#new_welfare .new_detail .advanced_set section label{
+  display: inline-block;
+  margin-right: 50px;
+  line-height: 40px;
+  vertical-align: middle;
+  /* float: left; */
+}
+#new_welfare .new_detail .advanced_set section input[type='radio']:checked + label::before{
+  background: #F86F4D;
+  background-clip: content-box;
+  /* padding: 0.2em; */
+}
+#new_welfare .new_detail .advanced_set section input[type='radio'] + label::before{
+  content: '\a0';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  border: 1px solid #F86F4D;
+}
+/* 底部样式 */
+#new_welfare .new_foot{
+  background: white;
+  height: 80px;
+  padding-left: 50px;
+  position: relative;
 
-
-/* #new_welfare .new_detail .advanced_set .new_photo section:nth-child(4) {
-    margin-top: 50px;
-} */
+}
+#new_welfare .new_foot button{
+  width: 100px;
+	height: 40px;
+	background-color: white;
+	border-radius: 6px;
+  border: solid 1px #f86f4d;
+  color: #f86f4d;
+  margin-top: 20px;
+  margin-right: 29px;
+}
+#new_welfare .new_foot button:hover{
+  background: #F86F4D;
+  color: white;
+}

@@ -72,9 +72,9 @@
                 </div>
                 <div id="new_welfare" class='row-fluid'>
                     <!-- 手机展示 -->
-                    <div class='new_phone span4' style='border: 1px solid red;height: 200px;margin-top: 20px;'></div>
+                    <div class='new_phone span4' style='margin-top: 20px;'></div>
                     <!-- 右边内容 -->
-                    <div class="new_right span8 row-fluid" style='border: 1px solid green;margin-top: 20px;'>
+                    <div class="new_right span8 row-fluid" style='margin-top: 20px;'>
                         <!-- 固定头部 -->
                         <div class="new_title" id='new_title'>
                             <span><i></i> 基础设置</span>
@@ -83,7 +83,7 @@
                             <span><i></i> 福利详情</span>
                             <span><i></i> 分享设置</span>
                         </div>
-                        <div class="new_detail" style='background: white;' id="new_detail">
+                        <div class="new_detail" style='background: white;height: 660px;' id="new_detail">
                             <!-- 基础设置 -->
                             <div>基础设置</div>
                             <!-- 高级设置 -->
@@ -114,40 +114,41 @@
                                     </section>
                                     <section>
                                         <span><i>*</i> 福利类型：</span>
-                                        <input type="radio" value=''>模版一(建议实物福利、虚拟福利使用)
-                                        <input type="radio" value=''>模版二(建议报名、到店类使用)
+                                        <input type="radio" value='' id='first' name='template'><label for="first">&nbsp;&nbsp;模版一(建议实物福利、虚拟福利使用)</label>
+                                        <input type="radio" value='' id='second' name='template'><label for="second">&nbsp;&nbsp;模版二(建议报名、到店类使用)</label>
                                     </section>
                                     <section>
                                         <span><i>*</i> 福利价格：</span>
-                                        <input type="text" value='' placeholder="价格最小为0.01元">元
-                                        <span><i>*</i> 划线价格：</span>
-                                        <input type="text" placeholder="价格最小为0.01元">元
+                                        <input type="text" value='' placeholder="价格最小为0.01元" class='span3'>&nbsp;&nbsp;元
+                                        <span style='margin-left: 25px;'><i>*</i> 划线价格：</span>
+                                        <input type="text" placeholder="价格最小为0.01元" >&nbsp;&nbsp;元
                                     </section>
                                     <section>
                                         <span><i>*</i> 广告费用：</span>
-                                        <input type="text" placeholder="0">元
+                                        <input type="text" placeholder="0" class='span3'>&nbsp;&nbsp;元
                                     </section>
                                     <section>
                                         <span><i>*</i> 库存数量：</span>
-                                        <input type="text" value='' placeholder="请输入整数">个
-                                        <span><i>*</i> 虚拟数量</span>
-                                        <input type="text" value='' placeholder="请输入整数">个
+                                        <input type="text" value='' placeholder="请输入整数" class='span3'>&nbsp;&nbsp;个
+                                        <span style='margin-left: 25px;'>
+                                          <i>*</i> 划线价格：</span>
+                                        <input type="text" placeholder="请输入整数">&nbsp;&nbsp;个
                                     </section>
-                                    <section>
+                                    <section style='margin-bottom: 10px;'>
                                         <span><i>*</i> 购买限制：</span>
-                                        <input type="radio"> 不限制
-                                        <input type="radio"> 每日限购
-                                        <input type="radio"> 每人限购
-                                        <input type="radio"> 每人每日限购
+                                        <input type="radio" name='buy' id='buy1'> <label for='buy1'>不限制</label>
+                                        <input type="radio" name='buy' id='buy2'> <label for='buy2'>每日限购</label>
+                                        <input type="radio" name='buy' id='buy3'> <label for='buy3'>每人限购</label>
+                                        <input type="radio" name='buy' id='buy4'> <label for='buy4'>每人每日限购</label>
                                     </section>
-                                    <section>
-                                        <span> 每日限购：</span>
-                                        <input type="text" placeholder="请输入整数">份福利
-                                        <span>(限购数量不能为0)</span>
+                                    <section style='margin-left: 85px;'>
+                                        <span style='margin-right: 15px;'> 每日限购：</span>
+                                        <input type="text" placeholder="请输入整数">&nbsp;&nbsp;&nbsp;份福利
+                                        <span style='color: #999999;'>(限购数量不能为0)</span>
                                     </section>
                                     <section>
                                         <span><i>*</i> 起购数量：</span>
-                                        <input type="text" placeholder="请输入整数，0为不限制">个
+                                        <input type="text" placeholder="请输入整数，0为不限制">&nbsp;&nbsp;个
                                     </section>
                                 </form>
                             </div>
@@ -159,7 +160,7 @@
                             <div>分享设置</div>
                         </div>
                         <!-- 固定底部 -->
-                        <div class="new_foot row">
+                        <div class="new_foot">
                             <button>保存</button>
                             <button>返回</button>
                             <button>预览</button>
