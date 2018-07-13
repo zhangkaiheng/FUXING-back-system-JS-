@@ -31,7 +31,10 @@ input {
   padding-top: 80px;
   padding-left: 70px;
 }
-
+#new_welfare .new_phone p{
+  width: 279px;
+  word-wrap:break-word;
+}
 #new_welfare .new_title span {
     width: 154px;
     height: 44px;
@@ -284,7 +287,7 @@ input {
   color: #F86F4D;
 }
 #new_welfare .welfare_details section:nth-of-type(1) button{
-  width: 15%;
+  width: 14%;
   height: 40px;
   background: white;
   border: 1px solid #999999;
@@ -312,7 +315,7 @@ input {
   position: relative;
 }
 #new_welfare .welfare_details #details_content #details_ul li input{
-  width: 80%;
+  width: 289px;
   border: 1px dotted #f86f4d;
   height: 40px;
   margin-left: 100px;
@@ -334,6 +337,20 @@ input {
   cursor: pointer;
   color: white;
 }
+#new_welfare .welfare_details #details_custom section:nth-of-type(1) button{
+  width: 14%;
+  height: 40px;
+  background: white;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  margin-right: 13px;
+  outline: none;
+}
+#new_welfare .welfare_details #details_custom section:nth-of-type(1) button:hover{
+  border: 1px solid #f86f4d;
+  background: #FFF0ED;
+}
+
 /* 底部样式 */
 #new_welfare .new_foot{
   background: white;

@@ -164,18 +164,35 @@
                                 <button>秀米样式</button>
                               </section>
                               <section id='details_content'>
-                                <div class='current'>
+                                <div class=''>
                                   <section>
                                     <span style='margin-left: 14px;'><i>*</i> 添加组件：</span>
-                                    <button onclick='add_text()'>文本</button>
-                                    <button onclick='add_img()'>图片</button>
+                                    <button onclick='add_text(1)'>文本</button>
+                                    <button onclick='add_text(2)'>图片</button>
                                   </section>
                                   <section>
                                     <ul id='details_ul'>
                                     </ul>
                                   </section>
                                 </div>
-                                <div>自定义</div>
+                                <div class='current' id='details_custom'>
+                                  <section  id='custom_button'>
+                                    <span style='margin-left: 14px;'>
+                                      <i>*</i> 添加组件：</span>
+                                    <button onclick='add_text(1)' class='current'>文本</button>
+                                    <button onclick='add_text(2)'>图片</button>
+                                    <button onclick='add_text(3)'>表单</button>
+                                    <button onclick='add_text(4)'>背景</button>
+                                    <button onclick='add_text(5)'>按钮</button>
+                                  </section>
+                                  <section id='custom_div'>
+                                    <div class='current'>文本</div>
+                                    <div>图片</div>
+                                    <div>表单</div>
+                                    <div>背景</div>
+                                    <div>按钮</div>
+                                  </section>
+                                </div>
                                 <div>秀米</div>
                               </section>
                             </div>
