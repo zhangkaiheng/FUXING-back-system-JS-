@@ -14,7 +14,7 @@
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
     <!-- 福利管理-新建福利-高级设置css -->
-    <link rel="stylesheet" href="./css/welfare_manage/welfate_details.css">
+    <link rel="stylesheet" href="./css/welfare_details/welfate_manage.css">
 </head>
 
 <body>
@@ -72,7 +72,8 @@
                 </div>
                 <div id="new_welfare" class='row-fluid'>
                     <!-- 手机展示 -->
-                    <div class='new_phone span4' style='margin-top: 20px;'></div>
+                    <div class='new_phone span4' style='margin-top: 20px;' id='new_phone'>
+                    </div>
                     <!-- 右边内容 -->
                     <div class="new_right span8 row-fluid" style='margin-top: 20px;'>
                         <!-- 固定头部 -->
@@ -87,7 +88,7 @@
                             <!-- 基础设置 -->
                             <div>基础设置</div>
                             <!-- 高级设置 -->
-                            <div class='advanced_set current'>
+                            <div class='advanced_set'>
                                 <form action="">
                                     <section>
                                         <span><i>*</i> 福利标题：</span>
@@ -136,10 +137,10 @@
                                     </section>
                                     <section style='margin-bottom: 10px;'>
                                         <span><i>*</i> 购买限制：</span>
-                                        <input type="radio" name='buy' id='buy1'> <label for='buy1'>不限制</label>
-                                        <input type="radio" name='buy' id='buy2'> <label for='buy2'>每日限购</label>
-                                        <input type="radio" name='buy' id='buy3'> <label for='buy3'>每人限购</label>
-                                        <input type="radio" name='buy' id='buy4'> <label for='buy4'>每人每日限购</label>
+                                        <input type="radio" name='buy' id='buy1'> <label for='buy1'>&nbsp;&nbsp;不限制</label>
+                                        <input type="radio" name='buy' id='buy2'> <label for='buy2'>&nbsp;&nbsp;每日限购</label>
+                                        <input type="radio" name='buy' id='buy3'> <label for='buy3'>&nbsp;&nbsp;每人限购</label>
+                                        <input type="radio" name='buy' id='buy4'> <label for='buy4'>&nbsp;&nbsp;每人每日限购</label>
                                     </section>
                                     <section style='margin-left: 85px;'>
                                         <span style='margin-right: 15px;'> 每日限购：</span>
@@ -155,7 +156,29 @@
                             <!-- 奖励设置 -->
                             <div>奖励设置</div>
                             <!-- 福利详情 -->
-                            <div>福利详情</div>
+                            <div class='welfare_details current' id='welfare_details'>
+                              <section id='details_title'>
+                                <span><i>*</i> 福利券样式：</span>
+                                <button class='current'>默认样式</button>
+                                <button>自定义样式</button>
+                                <button>秀米样式</button>
+                              </section>
+                              <section id='details_content'>
+                                <div class='current'>
+                                  <section>
+                                    <span style='margin-left: 14px;'><i>*</i> 添加组件：</span>
+                                    <button onclick='add_text()'>文本</button>
+                                    <button onclick='add_img()'>图片</button>
+                                  </section>
+                                  <section>
+                                    <ul id='details_ul'>
+                                    </ul>
+                                  </section>
+                                </div>
+                                <div>自定义</div>
+                                <div>秀米</div>
+                              </section>
+                            </div>
                             <!-- 分享设置 -->
                             <div>分享设置</div>
                         </div>
@@ -173,7 +196,7 @@
         <!-- 福利管理-新建福利-高级设置js -->
         <script src='./js/jquery-1.8.3.min.js'></script>
         <script src='./js/jquery-ui.js'></script>
-        <script src='./js/welfare_manage/welfare_details.js'></script>
+        <script src='./js/welfare_details/welfare_manage.js'></script>
 </body>
 <style type="text/css">
     * {

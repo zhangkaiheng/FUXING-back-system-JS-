@@ -14,10 +14,6 @@ i {
 input {
     outline: none;
 }
-#new_welfare .new_phone{
-  background: url('../../images/phone_bg.png') no-repeat 45px 0px;
-  height: 662px;
-}
 #new_title {
     height: 84px;
     border-bottom: 1px solid #ECEAEA;
@@ -28,11 +24,12 @@ input {
   position: relative;
 
 }
-
-#new_detail {
-    padding-left: 62px;
-    padding-top: 31px;
-    overflow-y: auto;
+/* 手机样式 */
+#new_welfare .new_phone{
+  background: url('../../images/phone_bg.png') no-repeat 45px 0px;
+  height: 662px;
+  padding-top: 80px;
+  padding-left: 70px;
 }
 
 #new_welfare .new_title span {
@@ -43,7 +40,12 @@ input {
     display: inline-block;
     margin-right: 4px;
 }
-
+/* 高级设置 */
+#new_detail {
+    padding-left: 62px;
+    padding-top: 31px;
+    overflow-y: auto;
+}
 #new_welfare .new_detail div {
     display: none;
 }
@@ -167,13 +169,6 @@ input {
 #new_welfare .new_title span:nth-of-type(5):hover>i {
     background: url('../../icons/five_orange.png') no-repeat;
 }
-
-
-/* #new_welfare .new_detail .advanced_set p {
-    height: 40px;
-    margin-bottom: 31px;
-} */
-
 #new_welfare .new_detail .advanced_set section {
     height: 40px;
     margin-bottom: 31px;
@@ -278,6 +273,66 @@ input {
   height: 0.7em;
   border-radius: 50%;
   border: 1px solid #F86F4D;
+}
+/* 福利详情 */
+#new_welfare .welfare_details section:nth-of-type(1) {
+  height: 40px;
+  margin-bottom: 25px;
+
+}
+#new_welfare .welfare_details section:nth-of-type(1) i{
+  color: #F86F4D;
+}
+#new_welfare .welfare_details section:nth-of-type(1) button{
+  width: 15%;
+  height: 40px;
+  background: white;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  margin-right: 13px;
+  outline: none;
+}
+#new_welfare .welfare_details section:nth-of-type(1) button.current{
+  border: 1px solid #F86F4D;
+  background: #FFF0ED;
+}
+#new_welfare .welfare_details section:nth-of-type(1) button:hover{
+  border: 1px solid #f86f4d;
+}
+#new_welfare .welfare_details section:nth-of-type(2) div{
+  display: none;
+}
+#new_welfare .welfare_details section:nth-of-type(2) div.current{
+  display: block;
+}
+#new_welfare .welfare_details #details_content div:nth-of-type(1) section:nth-of-type(1) i{
+  color: #F86F4D;
+}
+#new_welfare .welfare_details #details_content #details_ul li{
+  position: relative;
+}
+#new_welfare .welfare_details #details_content #details_ul li input{
+  width: 80%;
+  border: 1px dotted #f86f4d;
+  height: 40px;
+  margin-left: 100px;
+}
+#new_welfare .welfare_details #details_content #details_ul li:hover>span{
+  display: block;
+}
+#new_welfare .welfare_details #details_content #details_ul li span{
+  display: none;
+  width: 20px;
+  height: 20px;
+  background: #969393;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px !important;
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  cursor: pointer;
+  color: white;
 }
 /* 底部样式 */
 #new_welfare .new_foot{
