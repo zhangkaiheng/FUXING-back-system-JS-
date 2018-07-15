@@ -105,6 +105,7 @@ function add_text(num) {
     new_phone.appendChild(details_p);
     details_p.style.border = '2px dotted #f86f4d';
     details_p.style.height = '20px';
+    details_p.style.marginLeft = "27%";
   } else if (num === 2) {
     var details_img = document.createElement('img');
     details_li.innerHTML = '<img src="" alt="">'
@@ -133,23 +134,45 @@ function change_text(e) {
 }
 // 自定义样式
 var custom_button = document.getElementById("custom_button").getElementsByTagName("button");
-
 var custom_div = document.getElementById("custom_div").getElementsByTagName("div");
+// console.log(custom_button);
+// console.log(custom_div);
 
-for (var i = 0; i < custom_button.length; i++) {
-  custom_button[i].onclick = function () {
+
+for (let j = 0; j < custom_button.length; j++) {
+  custom_button[j].onclick = function () {
     custom_change(this);
   }
 }
 
 function custom_change(obj) {
-  for (var i = 0; i < custom_button.length; i++) {
-    if (custom_button[i] == obj) {
-      $("#custom_button button").eq(i).addClass('current');
-      $("#custom_div div").eq(i).addClass('current');
-    } else {
-      $("#custom_button span").eq(i).removeClass('current');
-      $("#custom_div div").eq(i).removeClass('current');
+  for (let j = 0; j < custom_button.length; j++) {
+    if (custom_button[j] == obj) {
+      $("#custom_button button").eq(j).addClass('current');
+      $("#custom_div div").eq(j).addClass('current');
+    } else {      
+      $("#custom_button button").eq(j).removeClass('current');
+      $("#custom_div div").eq(j).removeClass('current');
+    }
+  }
+}
+// 自定义样式-文本-input
+var custom_text_input = document.getElementById("custom_text_input").getElementsByTagName("input");
+var custom_text_p = document.getElementById("custom_text_p").getElementsByTagName('p');
+
+for (let j = 0; j < custom_text_input.length; j++) {
+  custom_text_input[j].onclick = function () {
+    custom_text_change(this);
+  }
+}
+function custom_text_change(obj) {
+  for (let j = 0; j < custom_text_input.length; j++) {
+    if (custom_text_input[j] == obj) {
+      $("#custom_text_input input").eq(j).addClass('current');
+      $("#custom_text_p p").eq(j).addClass('current');
+    } else {      
+      $("#custom_text_input input").eq(j).removeClass('current');
+      $("#custom_text_p p").eq(j).removeClass('current');
     }
   }
 }

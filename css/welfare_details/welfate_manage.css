@@ -26,10 +26,10 @@ input {
 }
 /* 手机样式 */
 #new_welfare .new_phone{
-  background: url('../../images/phone_bg.png') no-repeat 45px 0px;
+  background: url('../../images/phone_bg.png') no-repeat 60% 0px;
   height: 662px;
   padding-top: 80px;
-  padding-left: 70px;
+  /* padding-left: 70px; */
 }
 #new_welfare .new_phone p{
   width: 279px;
@@ -45,7 +45,7 @@ input {
 }
 /* 高级设置 */
 #new_detail {
-    padding-left: 62px;
+    /* padding-left: 62px; */
     padding-top: 31px;
     overflow-y: auto;
 }
@@ -175,6 +175,7 @@ input {
 #new_welfare .new_detail .advanced_set section {
     height: 40px;
     margin-bottom: 31px;
+    padding-left: 8%;
 }
 
 #new_welfare .new_detail .advanced_set section i {
@@ -278,6 +279,9 @@ input {
   border: 1px solid #F86F4D;
 }
 /* 福利详情 */
+/* #new_welfare .welfare_details section {
+  padding-left: 8%;
+} */
 #new_welfare .welfare_details section:nth-of-type(1) {
   height: 40px;
   margin-bottom: 25px;
@@ -310,6 +314,9 @@ input {
 }
 #new_welfare .welfare_details #details_content div:nth-of-type(1) section:nth-of-type(1) i{
   color: #F86F4D;
+}
+#new_welfare .welfare_details #details_content span:nth-of-type(1){
+  /* margin-left: 43px !important; */
 }
 #new_welfare .welfare_details #details_content #details_ul li{
   position: relative;
@@ -348,9 +355,52 @@ input {
 }
 #new_welfare .welfare_details #details_custom section:nth-of-type(1) button:hover{
   border: 1px solid #f86f4d;
-  background: #FFF0ED;
 }
-
+#new_welfare .welfare_details #details_custom section:nth-of-type(1) button.current{
+  background: #FFF0ED;
+  border: 1px solid #f86f4d;
+}
+/* 自定义样式-文本 */
+#new_welfare .welfare_details #details_custom #custom_div div{
+  display: none;
+}
+#new_welfare .welfare_details #details_custom #custom_div div.current{
+  display: block;
+}
+#new_welfare .welfare_details #details_custom #custom_div section:nth-of-type(1) span{
+  float: left;
+}
+#new_welfare .welfare_details #details_custom #custom_div section:nth-of-type(1) ul{
+  width: 75%;
+  float: left;
+}
+#new_welfare .welfare_details #details_custom #custom_div section:nth-of-type(1) ul li{
+  width: 26%;
+  float: left;
+  height: 35px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  border: 1px solid #999999;
+}
+#new_welfare .welfare_details #details_custom section:nth-of-type(3) span i{
+  color: #f86f4d;
+}
+#new_welfare .welfare_details #details_custom section:nth-of-type(3) input,label{
+ float: left;
+ margin-right: 10px;
+}
+#new_welfare .welfare_details #details_custom section:nth-of-type(3) label{
+  margin-right: 35px;
+}
+#new_welfare .welfare_details #details_custom #custom_text_p p{
+  display: none;
+}
+#new_welfare .welfare_details #details_custom #custom_text_p p.current{
+  display: block;
+}
 /* 底部样式 */
 #new_welfare .new_foot{
   background: white;
