@@ -24,8 +24,8 @@ for (let i = 0; i < spans.length; i++) {
   spans[i].addEventListener('click', function () {
     this.style.backgroundImage = "url('icons/mouse_click_" + i + ".png')"
     this.style.backgroundSize = "100% 100%";
-    this.style.color = 'white';
-    this.childNodes[0].style.backgroundImage = "url('icons/blank_" + i + ".png')";
+    this.style.color = 'white';        
+    this.childNodes[1].style.backgroundImage = "url('icons/blank_" + i + ".png')";
   })
 }
 $(function () {
@@ -136,7 +136,7 @@ function change_text(e) {
 var custom_button = document.getElementById("custom_button").getElementsByTagName("button");
 var custom_div = document.getElementById("custom_div").getElementsByTagName("div");
 // console.log(custom_button);
-// console.log(custom_div);
+console.log(custom_div);
 
 
 for (let j = 0; j < custom_button.length; j++) {
@@ -176,3 +176,18 @@ function custom_text_change(obj) {
     }
   }
 }
+// 自定义样式-图片
+var custom_input = document.getElementById('custom_input');
+var custom_img = document.getElementById('custom_img');
+function change_custom_img() {
+  custom_input.click();
+}
+
+custom_input.addEventListener('change', function () {
+  var reader = new FileReader();
+  reader.readAsDataURL(this.files[0]);
+  reader.onloadend = function (e) {   
+    custom_img.style.background = "url('" + e.target.result + "') no-repeat";
+    custom_img.style.backgroundSize = "100% 100%";
+  }
+})

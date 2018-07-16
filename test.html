@@ -89,9 +89,69 @@
               <span>
                 <i></i> 分享设置</span>
             </div>
-            <div class="new_detail" style='background: white;height: 660px;' id="new_detail">
+            <div class="new_detail" style='background: white;height: 490px;' id="new_detail">
               <!-- 基础设置 -->
-              <div>基础设置</div>
+              <div class="current basic_set" style='margin-left: 60px;'>
+                <section style='height: 57px;'>
+                  <span style='line-height: 57px;'><i>*</i> 福利类型：</span>
+                  <button>
+                    实物福利
+                    <p>(物流发货)</p>
+                  </button>
+                  <button>
+                    虚拟福利
+                    <p>(无需发货)</p>
+                  </button>
+                  <button>
+                    电子卡券
+                    <p>(无需发货)</p>
+                  </button>
+                  <button>
+                    报名福利
+                    <p>(无需发货)</p>
+                  </button>
+                </section>
+                <section>
+                  <span style='float: left;'><i>*</i> 福利类型：</span>
+                  <input type="radio" value='' id='basic_first' name='basic_template'>
+                  <label for="basic_first">&nbsp;&nbsp;模版一(建议实物福利、虚拟福利使用)</label>
+                  <input type="radio" value='' id='hasic_second' name='basic_template'>
+                  <label for="hasic_second">&nbsp;&nbsp;模版二(建议报名、到店类使用)</label>
+                </section>
+                <section>
+                  <span style='float: left;'><i>*</i> 福利展示：</span>
+                  <input type="radio" value='' id='basic_show_first' name='basic_template'>
+                  <label for="basic_show_first">&nbsp;&nbsp;展示在福利大厅</label>
+                  <input type="radio" value='' id='hasic_show_second' name='basic_template'>
+                  <label for="hasic_show_second">&nbsp;&nbsp;只展示在对应福利分类下</label>
+                </section>
+                <section>
+                  <span><i>*</i> 所属企业：</span>
+                  <select name="" id="" style='height: 40px;width: 50%;'>
+                    <option value="" selected>请选择福利所属企业</option>
+                  </select>
+                  <span>还没创建福利企业？快去创建吧～</span>
+                </section>
+                <section>
+                  <span><i>*</i> 福利分类：</span>
+                  <select name="" id="" style='height: 40px;width: 50%;'>
+                    <option value="" selected>请选择福利分类</option>
+                  </select>
+                  <span>还没创建福利企业？快去创建吧～</span>
+                </section>
+                <section>
+                  <span><i>*</i> 限制地域：</span>
+                  <select name="" id="" style='height: 40px;width: 30%;'>
+                    <option value="" selected>不限制</option>
+                  </select>
+                  <button>添加</button>
+                </section> 
+                <section>
+                  <span><i>*</i> 咨询电话：</span>
+                  <input type="text" style='height: 40px;width: 50%;' placeholder="请输入咨询电话">
+                </section>
+
+              </div>
               <!-- 高级设置 -->
               <div class='advanced_set'>
                 <form action="">
@@ -122,7 +182,7 @@
                     </ul>
                   </section>
                   <section>
-                    <span>
+                    <span style='float: left;'>
                       <i>*</i> 福利类型：</span>
                     <input type="radio" value='' id='first' name='template'>
                     <label for="first">&nbsp;&nbsp;模版一(建议实物福利、虚拟福利使用)</label>
@@ -177,45 +237,47 @@
               <!-- 奖励设置 -->
               <div>奖励设置</div>
               <!-- 福利详情 -->
-              <div class='welfare_details current' id='welfare_details'>
+              <div class='welfare_details' id='welfare_details'>
                 <section id='details_title'>
                   <span style='margin-left: 79px;'>
                     <i>*</i> 福利券样式：</span>
-                  <button>默认样式</button>
-                  <button class='current'>自定义样式</button>
+                  <button class='current'>默认样式</button>
+                  <button>自定义样式</button>
                   <button>秀米样式</button>
                 </section>
                 <section id='details_content'>
                   <!-- 默认样式 -->
-                  <div>
-                    <section>
+                  <div class='current'>
+                    <section style='margin-left: 92px;'>
                       <span>
                         <i>*</i> 添加组件：</span>
-                      <button onclick='add_text(1)'>文本</button>
+                      <button onclick='add_text(1)' class='current'>文本</button>
                       <button onclick='add_text(2)'>图片</button>
                     </section>
                     <section>
                       <ul id='details_ul'>
+                        <li>123</li>
                       </ul>
                     </section>
                   </div>
                   <!-- 自定义样式 -->
-                  <div id='details_custom' class='current'>
+                  <div id='details_custom'>
                     <section id='custom_button' style='border-bottom: 1px solid #ECEAEA;height: 60px;margin-left: 94px;'>
                       <span>
                         <i>*</i> 添加组件：</span>
-                      <button onclick='add_text(1)' class='current'>文本</button>
+                      <button onclick='add_text(1)' class="current">文本</button>
                       <button onclick='add_text(2)'>图片</button>
                       <button onclick='add_text(3)'>表单</button>
                       <button onclick='add_text(4)'>背景</button>
                       <button onclick='add_text(5)'>按钮</button>
                     </section>
                     <section id='custom_div' style='margin-left: 125px;'>
+                      <!-- 自定义样式-文本 -->
                       <div class='current'>
-                        <section style='float: left;width: 60%;padding-top: 40px;'>
+                        <section style='width: 60%;padding-top: 40px;display: inline-block;'>
                           <span>
                             <i style='color: #f86f4d;'>*</i> 字体：</span>
-                          <ul>
+                          <ul style='display: inline-block;'>
                             <li>毛笔行书简体</li>
                             <li>汉仪方叠体简</li>
                             <li>简胖头鱼</li>
@@ -224,12 +286,70 @@
                             <li>汉仪太极体简</li>
                           </ul>
                         </section>
-                        <section style='float: left;padding-top: 40px;'>
-                          <p>透明：
+                        <section style='float: right;margin-top: -20px;margin-right: 30px;'>
+                          <p style='margin-bottom: 30px;'>透明：
                             <input type="range">0%</p>
-                          <p>圆角：
+                          <p style='margin-bottom: 30px;'>圆角：
                             <input type="range">0%</p>
-                          <p>旋转：
+                          <p style='margin-bottom: 20px;'>旋转：
+                            <input type="range">0%</p>
+                        </section>
+                        <section style='padding-top: 220px;height: 230px;' id='custom_text_input'>
+                          <span style='float: left;margin-right: 15px;'>
+                            <i>*</i> 点击事件：</span>
+                          <input type="radio" id='input_click1' name='input_click'>
+                          <label for="input_click1">跳转外链</label>
+                          <input type="radio" id='input_click2' name='input_click'>
+                          <label for="input_click2">拨打电话</label>
+                          <input type="radio" id='input_click3' name='input_click'>
+                          <label for="input_click3">发送短信</label>
+                          <input type="radio" id='input_click4' name='input_click'>
+                          <label for="input_click4">打开淘宝APP</label>
+                          <input type="radio" id='input_click5' name='input_click'>
+                          <label for="input_click5">播放视频</label>
+                        </section>
+                        <section id='custom_text_p' style='margin-top: 60px;'>
+                          <p class='current'>
+                            链接地址：
+                            <input type="text" placeholder="http://" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            拨打电话：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            发送短信：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            打开淘宝APP：
+                            <input type="text" style='height: 40px;width: 77.2%;'>
+                          </p>
+                          <p>
+                            播放视频：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                        </section>
+                      </div>
+                      <!-- 自定义样式-图片 -->
+                      <div>
+                        <section style='float: left;width: 60%;padding-top: 40px;'>
+                          <span>
+                            <i style='color: #f86f4d;'>*</i> 图片：</span>
+                          <section style="position: relative;">
+                            <img src="" alt="" style='width: 150px;
+                            height: 150px;border: 1px solid #999999;display: inline-block;' id='custom_img'>
+                            <button style='width: 120px;position: absolute;top: 20px;left: 229px;' onclick='change_custom_img()'>更换图片</button>
+                            <input type="file" style='display: none;' id='custom_input'>
+                            <button style='width: 120px;position: absolute;top: 100px;left: 229px;'>删除</button>
+                          </section>
+                        </section>
+                        <section style='float: right;margin-right: 30px;'>
+                          <p style="margin-bottom: 30px;">透明：
+                            <input type="range">0%</p>
+                          <p style="margin-bottom: 30px;">圆角：
+                            <input type="range">0%</p>
+                          <p style="margin-bottom: 30px;">旋转：
                             <input type="range">0%</p>
                         </section>
                         <section style='padding-top: 260px;height: 230px;' id='custom_text_input'>
@@ -267,16 +387,91 @@
                             播放视频：
                             <input type="text" style='height: 40px;width: 80%;'>
                           </p>
-                        </section>
                       </div>
-                      <div>图片</div>
+                      <!-- 自定义样式- 表单-->
                       <div>表单</div>
-                      <div>背景</div>
-                      <div>按钮</div>
-                    </section>
+                      <!-- 自定义样式-背景 -->
+                      <div>
+                        <section style='float: left;width: 60%;padding-top: 40px;'>
+                          <span>
+                            <i style='color: #f86f4d;margin-bottom: 45px;'>*</i> 背景：</span>
+                          <input type="color" style='height: 30px;'>
+                          <p>
+                            <i style='color: #f86f4d;'>*</i> 透明度：
+                            <input type="range" min="0" max="100">
+                          </p>
+                          <section style="position: relative;">
+                            <span>
+                              <i style='color: #f86f4d;'>*</i> 叠加背景：</span>
+                            <img src="" alt="" style='width: 150px;
+                            height: 150px;border: 1px solid #999999;display: inline-block;' id='custom_img'>
+                            <button style='width: 120px;position: absolute;top: 20px;left: 269px;' onclick='change_custom_img()'>更换图片</button>
+                            <input type="file" style='display: none;' id='custom_input'>
+                            <button style='width: 120px;position: absolute;top: 100px;left: 269px;'>删除</button>
+                          </section>
+                      </div>
+                      <!-- 自定义样式-按钮 -->
+                      <div>
+                        <section style='float: left;width: 60%;padding-top: 40px;'>
+                          <p>
+                            <span style='line-height: 30px;'>
+                              <i style='color: #f86f4d;'>*</i> 按钮文本：</span>
+                            <input type="text" style='height: 30px;'>
+                          </p>
+                          <p>
+                            <span style='line-height: 30px;'>
+                              <i style='color: #f86f4d;'>*</i> 颜色插件：</span>
+                            <input type="color" style='height: 30px;'>
+                          </p>
+                        </section>
+                        <section style='float: right;margin-right: 30px;'>
+                          <p style="margin-bottom: 30px;">透明：
+                            <input type="range">0%</p>
+                          <p style="margin-bottom: 30px;">圆角：
+                            <input type="range">0%</p>
+                          <p style="margin-bottom: 30px;">旋转：
+                            <input type="range">0%</p>
+                        </section>
+                        <section style='padding-top: 260px;height: 230px;' id='custom_text_input'>
+                          <span style='float: left;margin-right: 15px;'>
+                            <i>*</i> 点击事件：</span>
+                          <input type="radio" id='input_click1' name='input_click'>
+                          <label for="input_click1">跳转外链</label>
+                          <input type="radio" id='input_click2' name='input_click'>
+                          <label for="input_click2">拨打电话</label>
+                          <input type="radio" id='input_click3' name='input_click'>
+                          <label for="input_click3">发送短信</label>
+                          <input type="radio" id='input_click4' name='input_click'>
+                          <label for="input_click4">打开淘宝APP</label>
+                          <input type="radio" id='input_click5' name='input_click'>
+                          <label for="input_click5">播放视频</label>
+                        </section>
+                        <section id='custom_text_p' style='margin-top: 60px;'>
+                          <p class='current'>
+                            链接地址：
+                            <input type="text" placeholder="http://" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            拨打电话：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            发送短信：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                          <p>
+                            打开淘宝APP：
+                            <input type="text" style='height: 40px;width: 77.2%;'>
+                          </p>
+                          <p>
+                            播放视频：
+                            <input type="text" style='height: 40px;width: 80%;'>
+                          </p>
+                      </div>
+                      </section>
                   </div>
                   <div>秀米</div>
-                </section>
+                  </section>
               </div>
               <!-- 分享设置 -->
               <div>分享设置</div>
