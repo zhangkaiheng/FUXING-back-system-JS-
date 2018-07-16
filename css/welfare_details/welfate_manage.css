@@ -359,6 +359,45 @@ input {
   border-radius: 50%;
   border: 1px solid #F86F4D;
 }
+/* 奖励设置 */
+#new_welfare .reward_set section{
+  height: 40px;
+  margin-bottom: 30px;
+}
+#new_welfare .reward_set section:nth-of-type(1){
+  height: 120px;
+  margin-bottom: 15px;
+}
+#new_welfare .reward_set section:nth-of-type(2){
+  height: 200px;
+  margin-bottom: 15px;
+}
+#new_welfare .reward_set section span i{
+  color: #F86F4D;
+}
+#new_welfare .reward_set section input{
+  display: none;
+  clip: rect(0, 0, 0, 0);
+}
+#new_welfare .reward_set section label{
+  display: inline-block;
+  margin-right: 15px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+#new_welfare .reward_set section input[type='radio']:checked + label::before{
+  background: #F86F4D;
+  background-clip: content-box;
+}
+#new_welfare .reward_set section label::before{
+  content: '\a0';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  border: 1px solid #F86F4D;
+}
 /* 福利详情 */
 /* #new_welfare .welfare_details section {
   padding-left: 8%;
@@ -469,7 +508,7 @@ input {
   color: #f86f4d;
 }
 #new_welfare .welfare_details #details_custom section:nth-of-type(3) input,label{
- float: left;
+ /* float: left; */
  margin-right: 10px;
 }
 #new_welfare .welfare_details #details_custom section:nth-of-type(3) label{

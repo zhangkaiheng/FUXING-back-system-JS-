@@ -235,7 +235,73 @@
                 </form>
               </div>
               <!-- 奖励设置 -->
-              <div>奖励设置</div>
+              <div class='reward_set' style="margin-left: 60px;">
+                <section>
+                  <span>
+                    <i>*</i> 福利奖励标准：</span>
+                      <input type="radio" value='' id='reward_one' name='basic_template'>
+                      <label for="reward_one">&nbsp;&nbsp;有效购买</label>
+                      <input type="radio" value='' id='reward_two' name='basic_template'>
+                      <label for="reward_two">&nbsp;&nbsp;CPC有效点击</label>
+                      <input type="radio" value='' id='reward_three' name='basic_template'>
+                      <label for="reward_three">&nbsp;&nbsp;CPS 有效线上报名</label>
+                      <input type="radio" value='' id='reward_four' name='basic_template'>
+                      <label for="reward_four">&nbsp;&nbsp;CPA 浏览展示计费</label>
+                    <p style="margin-left: 114px;">
+                      <input type="radio" value='' id='reward_five' name='basic_template'>
+                      <label for="reward_five">&nbsp;&nbsp;卡券类型</label>
+                      <input type="radio" value='' id='reward_six' name='basic_template'>
+                      <label for="reward_six">&nbsp;&nbsp;票务</label>
+                      <input type="radio" value='' id='reward_seven' name='basic_template'>
+                      <label for="reward_seven">&nbsp;&nbsp;自定义票券</label>
+                    </p>
+                    <p style="margin-left: 114px;color: #999999;">(分享后成功购买即可获得相应福币奖励)</p>
+                </section>
+                <section style='margin-left: 27px;'>
+                  <span>
+                    <i>*</i> 福币奖励：</span>
+                    <input type="radio" value='' id='reward_eight' name='basic_template'>
+                    <label for="reward_eight">&nbsp;&nbsp;不划分福星等级</label>
+                    <input type="radio" value='' id='reward_nine' name='basic_template'>
+                    <label for="reward_nine">&nbsp;&nbsp;划分福星等级</label>
+                    <p style='margin-top: 15px;margin-left: 85px;'>
+                      普通福星奖励 <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
+                    </p>
+                    <p style="margin-left: 85px;">
+                      金牌福星奖励 <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
+                    </p>
+                    <p style='color: #999999;margin-left: 85px;'>(最多不超过***个福币 注：2福币=1分钱)</p>
+                </section>
+                <section style='margin-left: 27px;margin-top: 25px;margin-bottom: 10px;'>
+                  <span>
+                    <i>*</i> 发放形式：</span>
+                  <input type="radio" value='' id='reward_ten' name='basic_template'>
+                  <label for="reward_ten">&nbsp;&nbsp;独享</label>
+                  <input type="radio" value='' id='reward_eleven' name='basic_template'>
+                  <label for="reward_eleven">&nbsp;&nbsp;均分</label>
+                </section>
+                <section style='margin-left: 27px;height: 120px;margin-bottom: 10px;'>
+                  <span>
+                    <i>*</i> 奖励限制：</span>
+                  <input type="radio" value='' id='reward_twelve' name='basic_template'>
+                  <label for="reward_twelve">&nbsp;&nbsp;不限制</label>
+                  <input type="radio" value='' id='reward_thirteen' name='basic_template'>
+                  <label for="reward_thirteen">&nbsp;&nbsp;每日限领</label>
+                  <input type="radio" value='' id='reward_fourteen' name='basic_template'>
+                  <label for="reward_fourteen">&nbsp;&nbsp;每人限领</label>
+                  <input type="radio" value='' id='reward_fifteen' name='basic_template'>
+                  <label for="reward_fifteen">&nbsp;&nbsp;每人每日限领</label>
+                  <p style="margin-left: 90px;margin-top: 15px;">
+                     每日限领
+                    <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 份福币奖励
+                  </p>
+                </section>
+                <section>
+                  <span><i>*</i> 点击奖励福币：</span>
+                  点击奖励
+                  <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
+                </section>
+              </div>
               <!-- 福利详情 -->
               <div class='welfare_details' id='welfare_details'>
                 <section id='details_title'>

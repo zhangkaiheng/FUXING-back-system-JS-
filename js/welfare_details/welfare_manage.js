@@ -136,7 +136,7 @@ function change_text(e) {
 var custom_button = document.getElementById("custom_button").getElementsByTagName("button");
 var custom_div = document.getElementById("custom_div").getElementsByTagName("div");
 // console.log(custom_button);
-console.log(custom_div);
+// console.log(custom_div);
 
 
 for (let j = 0; j < custom_button.length; j++) {
