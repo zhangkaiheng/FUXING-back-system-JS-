@@ -520,6 +520,41 @@ input {
 #new_welfare .welfare_details #details_custom #custom_text_p p.current{
   display: block;
 }
+/* 分享设置 */
+#new_welfare .share_set{
+  margin-left: 60px;
+}
+#new_welfare .share_set section{
+  margin-bottom: 30px;
+}
+#new_welfare .share_set section textarea{
+  width: 60%;
+}
+#new_welfare .share_set span i{
+  color: #f86f4d;
+}
+#new_welfare .share_set section button{
+  width: 120px;
+  border: 1px solid #999999;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 15px;
+}
+#new_welfare .share_set section button:hover{
+  background: #FFF0ED;
+  border-color: #F86F4D;
+}
+#new_welfare .share_set section img{
+  border: 1px solid #999999;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  font-size: 20px;
+  color: #F86F4D;
+  display: inline-block;
+}
 /* 底部样式 */
 #new_welfare .new_foot{
   background: white;

@@ -191,3 +191,20 @@ custom_input.addEventListener('change', function () {
     custom_img.style.backgroundSize = "100% 100%";
   }
 })
+//分享设置
+var share_input = document.getElementById('share_input');
+function share_upload_img () {
+  share_input.click();
+}
+share_input.addEventListener('change', function () {
+  var me = this;
+  var reader = new FileReader();
+  reader.readAsDataURL(this.files[0]);
+  reader.onloadend = function (e) {
+    
+    me.parentNode.childNodes[3].style.background = "url('" + e.target.result + "') no-repeat";
+    me.parentNode.childNodes[3].style.backgroundSize = "cover";
+    console.log(me.parentNode.childNodes[5].firstChild);
+    me.parentNode.childNodes[5].innerHTML = "更换图片";
+  }
+})
