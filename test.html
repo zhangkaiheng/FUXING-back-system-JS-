@@ -10,6 +10,7 @@
   <link rel=stylesheet href="css/bootstrap.css">
   <link href="css/style.css" rel="stylesheet" />
   <link rel=stylesheet href="css/welfareMg.css">
+  <link rel="stylesheet" href="./css/jquery-ui.min.css">
   <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
   <script src="js/bootstrap.js" type="text/javascript"></script>
@@ -73,7 +74,7 @@
         <div id="new_welfare" class='row-fluid'>
           <!-- 手机展示 -->
           <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' >
-            <div class='phone_content' style='width: 320px;height: 480px;margin: 12px 0 0 40px;
+            <div class='phone_content' style='width: 320px;height: 480px;margin: 12px 0 0 40px;overflow-y: scroll;
             ' id='phone_content'>
             </div>
           </div>
@@ -335,11 +336,11 @@
                     <section id='custom_button' style='border-bottom: 1px solid #ECEAEA;height: 60px;'>
                       <span style="margin-left: 94px;">
                         <i>*</i> 添加组件：</span>
-                      <button onclick='add_text(1)' class="current">文本</button>
-                      <button onclick='add_text(2)'>图片</button>
-                      <button onclick='add_text(3)'>表单</button>
-                      <button onclick='add_text(4)'>背景</button>
-                      <button onclick='add_text(5)'>按钮</button>
+                      <button class="current">文本</button>
+                      <button>图片</button>
+                      <button>表单</button>
+                      <button>背景</button>
+                      <button>按钮</button>
                     </section>
                     <section id='custom_div' style='margin-left: 125px;'>
                       <!-- 自定义样式-文本 -->
@@ -358,7 +359,7 @@
                         </section>
                         <section style='float: right;margin-top: -20px;margin-right: 30px;'>
                           <p style='margin-bottom: 30px;'>透明：
-                            <input type="range">0%</p>
+                            <input type="range" defaultValue='0'>0%</p>
                           <p style='margin-bottom: 30px;'>圆角：
                             <input type="range">0%</p>
                           <p style='margin-bottom: 20px;'>旋转：
@@ -409,7 +410,7 @@
                           <section style="position: relative;">
                             <img src="" alt="" style='width: 150px;
                             height: 150px;border: 1px solid #999999;display: inline-block;' id='custom_img'>
-                            <button style='width: 120px;position: absolute;top: 20px;left: 229px;' onclick='change_custom_img()'>更换图片</button>
+                            <button style='width: 120px;position: absolute;top: 20px;left: 229px;' onclick='change_custom_img()'>上传图片</button>
                             <input type="file" style='display: none;' id='custom_input'>
                             <button style='width: 120px;position: absolute;top: 100px;left: 229px;'>删除</button>
                           </section>
@@ -474,9 +475,9 @@
                             <span>
                               <i style='color: #f86f4d;'>*</i> 叠加背景：</span>
                             <img src="" alt="" style='width: 150px;
-                            height: 150px;border: 1px solid #999999;display: inline-block;' id='custom_img'>
-                            <button style='width: 120px;position: absolute;top: 20px;left: 269px;' onclick='change_custom_img()'>更换图片</button>
-                            <input type="file" style='display: none;' id='custom_input'>
+                            height: 150px;border: 1px solid #999999;display: inline-block;' id='custom_bg_img'>
+                            <button style='width: 120px;position: absolute;top: 20px;left: 269px;'>上传图片</button>
+                            <input type="file" style='display: none;' id='custom_bg_input'>
                             <button style='width: 120px;position: absolute;top: 100px;left: 269px;'>删除</button>
                           </section>
                       </div>

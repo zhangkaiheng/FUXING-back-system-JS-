@@ -90,9 +90,9 @@ default_input.addEventListener('change', function () {
     
   }
 })
-$('#phone_content').sortable({
-  scroll: true
-})
+// $('#phone_content').sortable({
+//   scroll: true
+// })
 // $('#phone_content>p').draggable({
 //   scroll: true
 // });
@@ -112,14 +112,17 @@ function default_add_text() {
 // 切换样式
 var details_buttons = document.getElementById("details_title").getElementsByTagName("button");
 var details_divs = document.getElementById("details_content").getElementsByTagName("div");
-console.log(details_divs);
-
 
 for (var i = 0; i < details_buttons.length; i++) {
   details_buttons[i].onclick = function () {
     details_change(this);
+    // 清除当前页手机内容
+    // delete_phone();
+    (function delete_phone() {
+      phone_content.innerHTML = '';
+    } ())
   }
-}
+};  
 
 function details_change(obj) {
   for (var i = 0; i < details_buttons.length; i++) {
@@ -186,9 +189,6 @@ $("#details_title button").eq(1).click(function () {
 // 自定义样式
 var custom_button = document.getElementById("custom_button").getElementsByTagName("button");
 var custom_div = document.getElementById("custom_div").getElementsByTagName("div");
-// console.log(custom_button);
-// console.log(custom_div);
-
 
 for (let j = 0; j < custom_button.length; j++) {
   custom_button[j].onclick = function () {
@@ -207,8 +207,72 @@ function custom_change(obj) {
     }
   }
 }
-$('custom_button button').eq(1).click(function () {
-  console.log(1);
+// 添加关闭i
+
+$('#custom_button').on('click', 'button', function () {
+  var index = $(this).index();
+  if (index === 1) {
+    var new_textarea = document.createElement('textarea');
+    var new_div = document.createElement('div');
+    var new_i = document.createElement('i');
+    // new_div.style.width = '220px';
+    new_div.style.position = 'relative';
+    new_div.style.width = new_textarea.width + '10' +'px';
+    new_i.innerHTML = ' X ';
+    new_i.style.backgroundColor = '#999999';
+    new_div.appendChild(new_textarea);
+    new_div.appendChild(new_i);
+    new_div.style.border = '2px dotted #f86f4d';
+    new_textarea.style.height = '30px';
+    new_textarea.style.marginBottom = '0px';
+    new_textarea.style.maxWidth = '320px';
+    phone_content.appendChild(new_div);
+    new_i.addEventListener('click', function () {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    })
+    setTimeout(() => {
+      $('#phone_content>div').draggable({ 
+        containment: '#phone_content',
+        scroll: true
+      });
+      $('#phone_content>div').resizable();
+    }, 1);
+  }else if (index === 4) {    
+    $('#custom_bg_img').next().click(function () {
+      $('#custom_bg_input').click();
+    });
+    $('#custom_bg_input').on('change', function () {
+      var reader = new FileReader();
+      reader.readAsDataURL(this.files[0]);
+      reader.onloadend = function (e) {        
+        phone_content.style.background = "url(" + e.target.result + ") no-repeat";
+        phone_content.style.backgroundSize = 'cover';
+      }
+    })
+  }else if (index === 5) {
+    var phone_span = document.createElement('span');
+    phone_span.innerHTML = '我是按钮';
+    phone_span.style.display = 'block';
+    phone_span.style.width = '120px';
+    phone_span.style.height = '40px';
+    phone_span.style.textAlign = 'center';
+    phone_span.style.lineHeight = '40px';
+    phone_span.style.backgroundColor = '#cccccc';
+    phone_span.style.position = 'relative';
+    phone_content.appendChild(phone_span);
+
+    var new_i = document.createElement('i');
+    new_i.innerHTML = ' X ';
+    new_i.style.backgroundColor = '#999999';
+    phone_span.appendChild(new_i);
+    new_i.addEventListener('click', function () {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    })
+    setTimeout(() => {
+      $('#phone_content>span').draggable();
+      $('#phone_content>span').resizable();
+    }, 1);
+  }  
   
 })
 
@@ -232,19 +296,49 @@ function custom_text_change(obj) {
     }
   }
 }
+
+function custom_add_text() {
+  console.log(1);
+  var new_p = document.createElement('p');
+  new_p.style.height = '30px';
+  new_p.style.border = '1px solid blue';
+  new_p.style.marginBottom = '0px';
+  new_p.style.resize = 'none';
+  console.log(phone_content);
+  phone_content.appendChild(new_p);
+}
 // 自定义样式-图片
 var custom_input = document.getElementById('custom_input');
 var custom_img = document.getElementById('custom_img');
 function change_custom_img() {
-  custom_input.click();
+  custom_input.click();  
 }
-
+// 自定义样式添加图片
 custom_input.addEventListener('change', function () {
   var reader = new FileReader();
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
     custom_img.style.background = "url('" + e.target.result + "') no-repeat";
-    custom_img.style.backgroundSize = "100% 100%";
+    // custom_img.style.backgroundSize = "cover";
+    var phone_img = document.createElement('img');
+    var phone_div = document.createElement('div');
+    phone_div.appendChild(phone_img);
+    phone_div.style.position = 'relative';
+    phone_div.style.cssFloat = 'left';
+    phone_img.src = e.target.result;
+    phone_img.style.width = '100%';
+    phone_content.appendChild(phone_div);
+    var new_i = document.createElement('i');
+    new_i.innerHTML = ' X ';
+    new_i.style.backgroundColor = '#999999';
+    phone_div.appendChild(new_i);
+    new_i.addEventListener('click', function () {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    })
+    setTimeout(() => {
+      $('#phone_content>div').draggable();
+      $('#phone_content>div').resizable();
+    }, 1);
   }
 })
 //分享设置
