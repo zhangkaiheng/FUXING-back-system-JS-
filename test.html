@@ -72,16 +72,16 @@
         </div>
         <div id="new_welfare" class='row-fluid'>
           <!-- 手机展示 -->
-          <div class='new_phone span4' style='margin-top: 20px;' id='new_phone'>
+          <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' id='new_phone'>
           </div>
           <!-- 右边内容 -->
           <div class="new_right span8 row-fluid" style='margin-top: 20px;'>
             <!-- 固定头部 -->
             <div class="new_title" id='new_title'>
-              <span>
-                <i></i> 基础设置</span>
               <span class='current'>
-                <i></i>高级设置</span>
+                <i></i> 基础设置</span>
+              <span>
+                <i></i> 高级设置</span>
               <span>
                 <i></i> 奖励设置</span>
               <span>
@@ -89,9 +89,9 @@
               <span>
                 <i></i> 分享设置</span>
             </div>
-            <div class="new_detail" style='background: white;height: 490px;' id="new_detail">
+            <div class="new_detail" style='background: white;height: 570px;' id="new_detail">
               <!-- 基础设置 -->
-              <div class="current basic_set" style='margin-left: 60px;'>
+              <article class="current basic_set" style='margin-left: 60px;'>
                 <section style='height: 57px;'>
                   <span style='line-height: 57px;'><i>*</i> 福利类型：</span>
                   <button>
@@ -130,30 +130,30 @@
                   <select name="" id="" style='height: 40px;width: 50%;'>
                     <option value="" selected>请选择福利所属企业</option>
                   </select>
-                  <span>还没创建福利企业？快去创建吧～</span>
+                  <span>&nbsp;&nbsp;还没创建福利企业？快去创建吧～</span>
                 </section>
                 <section>
                   <span><i>*</i> 福利分类：</span>
                   <select name="" id="" style='height: 40px;width: 50%;'>
                     <option value="" selected>请选择福利分类</option>
                   </select>
-                  <span>还没创建福利企业？快去创建吧～</span>
+                  <span>&nbsp;&nbsp;还没创建福利企业？快去创建吧～</span>
                 </section>
                 <section>
                   <span><i>*</i> 限制地域：</span>
                   <select name="" id="" style='height: 40px;width: 30%;'>
                     <option value="" selected>不限制</option>
                   </select>
-                  <button>添加</button>
+                  <button style='color: #f86f4d;border: 0px;outline: none;margin-left: 10px;'>添加</button>
                 </section> 
                 <section>
                   <span><i>*</i> 咨询电话：</span>
                   <input type="text" style='height: 40px;width: 50%;' placeholder="请输入咨询电话">
                 </section>
 
-              </div>
+              </article>
               <!-- 高级设置 -->
-              <div class='advanced_set'>
+              <article class='advanced_set'>
                 <form action="">
                   <section>
                     <span>
@@ -233,9 +233,9 @@
                     <input type="text" placeholder="请输入整数，0为不限制">&nbsp;&nbsp;个
                   </section>
                 </form>
-              </div>
+              </article>
               <!-- 奖励设置 -->
-              <div class='reward_set' style="margin-left: 60px;">
+              <article class='reward_set' style="margin-left: 60px;">
                 <section>
                   <span>
                     <i>*</i> 福利奖励标准：</span>
@@ -301,9 +301,9 @@
                   点击奖励
                   <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
                 </section>
-              </div>
+              </article>
               <!-- 福利详情 -->
-              <div class='welfare_details' id='welfare_details'>
+              <article class='welfare_details' id='welfare_details'>
                 <section id='details_title'>
                   <span style='margin-left: 79px;'>
                     <i>*</i> 福利券样式：</span>
@@ -318,11 +318,12 @@
                       <span>
                         <i>*</i> 添加组件：</span>
                       <button onclick='add_text(1)' class='current'>文本</button>
-                      <button onclick='add_text(2)'>图片</button>
+                      <button onclick='default_add_img()'>图片</button>
+                      <input type="file" id='default_input'>
                     </section>
                     <section>
                       <ul id='details_ul'>
-                        <li>123</li>
+                        <li></li>
                       </ul>
                     </section>
                   </div>
@@ -340,12 +341,12 @@
                     <section id='custom_div' style='margin-left: 125px;'>
                       <!-- 自定义样式-文本 -->
                       <div class='current'>
-                        <section style='width: 60%;padding-top: 40px;display: inline-block;'>
+                        <section style='width: 60%;padding-top: 30px;display: inline-block;'>
                           <span>
                             <i style='color: #f86f4d;'>*</i> 字体：</span>
                           <ul style='display: inline-block;'>
                             <li>毛笔行书简体</li>
-                            <li>汉仪方叠体简</li>
+                            <li>汉仪方叠简体</li>
                             <li>简胖头鱼</li>
                             <li>简丫丫</li>
                             <li>简剪纸</li>
@@ -360,19 +361,19 @@
                           <p style='margin-bottom: 20px;'>旋转：
                             <input type="range">0%</p>
                         </section>
-                        <section style='padding-top: 220px;height: 230px;' id='custom_text_input'>
-                          <span style='float: left;margin-right: 15px;'>
+                        <section style='padding-top: 220px;' id='custom_text_input'>
+                          <span style='float: left;margin-right: 10px;'>
                             <i>*</i> 点击事件：</span>
-                          <input type="radio" id='input_click1' name='input_click'>
-                          <label for="input_click1">跳转外链</label>
-                          <input type="radio" id='input_click2' name='input_click'>
-                          <label for="input_click2">拨打电话</label>
-                          <input type="radio" id='input_click3' name='input_click'>
-                          <label for="input_click3">发送短信</label>
-                          <input type="radio" id='input_click4' name='input_click'>
-                          <label for="input_click4">打开淘宝APP</label>
-                          <input type="radio" id='input_click5' name='input_click'>
-                          <label for="input_click5">播放视频</label>
+                          <input style="float: left;" type="radio" id='input_click1' name='input_click'>
+                          <label for="input_click1" style="float: left;">跳转外链</label>
+                          <input style="float: left;"type="radio" id='input_click2' name='input_click'>
+                          <label style="float: left;"for="input_click2">拨打电话</label>
+                          <input style="float: left;"type="radio" id='input_click3' name='input_click'>
+                          <label style="float: left;"for="input_click3">发送短信</label>
+                          <input style="float: left;"type="radio" id='input_click4' name='input_click'>
+                          <label style="float: left;"for="input_click4">打开淘宝APP</label>
+                          <input style="float: left;"type="radio" id='input_click5' name='input_click'>
+                          <label style="float: left;"for="input_click5">播放视频</label>
                         </section>
                         <section id='custom_text_p' style='margin-top: 60px;'>
                           <p class='current'>
@@ -419,18 +420,18 @@
                             <input type="range">0%</p>
                         </section>
                         <section style='padding-top: 260px;height: 230px;' id='custom_text_input'>
-                          <span style='float: left;margin-right: 15px;'>
+                          <span style='float: left;margin-right: 10px;'>
                             <i>*</i> 点击事件：</span>
-                          <input type="radio" id='input_click1' name='input_click'>
-                          <label for="input_click1">跳转外链</label>
-                          <input type="radio" id='input_click2' name='input_click'>
-                          <label for="input_click2">拨打电话</label>
-                          <input type="radio" id='input_click3' name='input_click'>
-                          <label for="input_click3">发送短信</label>
-                          <input type="radio" id='input_click4' name='input_click'>
-                          <label for="input_click4">打开淘宝APP</label>
-                          <input type="radio" id='input_click5' name='input_click'>
-                          <label for="input_click5">播放视频</label>
+                          <input style="float: left;" type="radio" id='input_click1' name='input_click'>
+                          <label for="input_click1" style="float: left;">跳转外链</label>
+                          <input style="float: left;" type="radio" id='input_click2' name='input_click'>
+                          <label style="float: left;" for="input_click2">拨打电话</label>
+                          <input style="float: left;" type="radio" id='input_click3' name='input_click'>
+                          <label style="float: left;" for="input_click3">发送短信</label>
+                          <input style="float: left;" type="radio" id='input_click4' name='input_click'>
+                          <label style="float: left;" for="input_click4">打开淘宝APP</label>
+                          <input style="float: left;" type="radio" id='input_click5' name='input_click'>
+                          <label style="float: left;" for="input_click5">播放视频</label>
                         </section>
                         <section id='custom_text_p' style='margin-top: 60px;'>
                           <p class='current'>
@@ -499,18 +500,18 @@
                             <input type="range">0%</p>
                         </section>
                         <section style='padding-top: 260px;height: 230px;' id='custom_text_input'>
-                          <span style='float: left;margin-right: 15px;'>
+                          <span style='float: left;margin-right: 10px;'>
                             <i>*</i> 点击事件：</span>
-                          <input type="radio" id='input_click1' name='input_click'>
-                          <label for="input_click1">跳转外链</label>
-                          <input type="radio" id='input_click2' name='input_click'>
-                          <label for="input_click2">拨打电话</label>
-                          <input type="radio" id='input_click3' name='input_click'>
-                          <label for="input_click3">发送短信</label>
-                          <input type="radio" id='input_click4' name='input_click'>
-                          <label for="input_click4">打开淘宝APP</label>
-                          <input type="radio" id='input_click5' name='input_click'>
-                          <label for="input_click5">播放视频</label>
+                          <input style="float: left;" type="radio" id='input_click1' name='input_click'>
+                          <label for="input_click1" style="float: left;">跳转外链</label>
+                          <input style="float: left;" type="radio" id='input_click2' name='input_click'>
+                          <label style="float: left;" for="input_click2">拨打电话</label>
+                          <input style="float: left;" type="radio" id='input_click3' name='input_click'>
+                          <label style="float: left;" for="input_click3">发送短信</label>
+                          <input style="float: left;" type="radio" id='input_click4' name='input_click'>
+                          <label style="float: left;" for="input_click4">打开淘宝APP</label>
+                          <input style="float: left;" type="radio" id='input_click5' name='input_click'>
+                          <label style="float: left;" for="input_click5">播放视频</label>
                         </section>
                         <section id='custom_text_p' style='margin-top: 60px;'>
                           <p class='current'>
@@ -538,14 +539,15 @@
                   </div>
                   <div>秀米</div>
                   </section>
-              </div>
+              </article>
               <!-- 分享设置 -->
-              <div class='share_set current'>
+              <article class='share_set current'>
                 <section>
                   <span style="float: left;"><i>*</i> 微信分享图标：</span>
                     <img src="" alt="">
                     <button onclick='share_upload_img()'>添加图片</button>
                     <input type="file" style="display: none;" id='share_input'>
+                    <p style='color: #999999;margin: 20px 0 0 105px;'>建议尺寸：400*400像素，请上传格式为jpg、png、git的图片</p>
                 </section>
                 <section style='overflow: hidden;'>
                   <span style='float: left;'>
@@ -557,7 +559,7 @@
                     <i>*</i> 微信分享标题：</span>
                   <textarea style='float: left;resize:none;' name="" id="" cols="30" rows="4" placeholder="线上报名，线下即可体验外教直播面授"></textarea>
                 </section>
-              </div>
+              </article>
             </div>
             <!-- 固定底部 -->
             <div class="new_foot">

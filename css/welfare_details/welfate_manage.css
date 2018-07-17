@@ -27,13 +27,13 @@ input {
 /* 手机样式 */
 #new_welfare .new_phone{
   background: url('../../images/phone_bg.png') no-repeat 60% 0px;
-  height: 662px;
+  height: 743px;
   padding-top: 80px;
   /* padding-left: 70px; */
 }
 #new_welfare .new_phone p{
   width: 279px;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 #new_welfare .new_title span {
     width: 154px;
@@ -130,11 +130,11 @@ input {
     padding-top: 31px;
     overflow-y: auto;
 }
-#new_welfare .new_detail div {
+#new_welfare .new_detail article {
     display: none;
 }
 
-#new_welfare .new_detail div.current {
+#new_welfare .new_detail article.current {
     display: block;
 }
 
@@ -512,7 +512,7 @@ input {
  margin-right: 10px;
 }
 #new_welfare .welfare_details #details_custom section:nth-of-type(3) label{
-  margin-right: 30px;
+  margin-right: 20px;
 }
 #new_welfare .welfare_details #details_custom #custom_text_p p{
   display: none;
@@ -572,6 +572,7 @@ input {
   color: #f86f4d;
   margin-top: 20px;
   margin-right: 29px;
+  outline: none;
 }
 #new_welfare .new_foot button:hover{
   background: #F86F4D;

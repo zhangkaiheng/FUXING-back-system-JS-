@@ -1,6 +1,8 @@
 // 高级设置js
 var spans = document.getElementById("new_title").getElementsByTagName("span");
-var divs = document.getElementById("new_detail").getElementsByTagName("div");
+var articles = document.getElementById("new_detail").getElementsByTagName("article");
+console.log(articles);
+
 
 for (var i = 0; i < spans.length; i++) {
   spans[i].onclick = function () {
@@ -12,14 +14,16 @@ function manage_change(obj) {
   for (var i = 0; i < spans.length; i++) {
     if (spans[i] == obj) {
       $("#new_title span").eq(i).addClass('current');
-      $("#new_detail div").eq(i).addClass('current');
+      $("#new_detail article").eq(i).addClass('current');
     } else {
       $("#new_title span").eq(i).removeClass('current');
-      $("#new_detail div").eq(i).removeClass('current');
+      $("#new_detail article").eq(i).removeClass('current');
     }
   }
 }
 //切换title背景图状态
+
+
 for (let i = 0; i < spans.length; i++) {
   spans[i].addEventListener('click', function () {
     this.style.backgroundImage = "url('icons/mouse_click_" + i + ".png')"
@@ -28,6 +32,10 @@ for (let i = 0; i < spans.length; i++) {
     this.childNodes[1].style.backgroundImage = "url('icons/blank_" + i + ".png')";
   })
 }
+window.onload = function () {
+  spans[0].click();
+}
+
 $(function () {
   $("#sortable").sortable({
     containment: '#sortable',
