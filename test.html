@@ -72,7 +72,10 @@
         </div>
         <div id="new_welfare" class='row-fluid'>
           <!-- 手机展示 -->
-          <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' id='new_phone'>
+          <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' >
+            <div class='phone_content' style='width: 320px;height: 480px;margin: 84px 0 0 43px;border: 13px solid teal;
+            ' id='phone_content'>
+            </div>
           </div>
           <!-- 右边内容 -->
           <div class="new_right span8 row-fluid" style='margin-top: 20px;'>
@@ -317,13 +320,13 @@
                     <section style='margin-left: 92px;'>
                       <span>
                         <i>*</i> 添加组件：</span>
-                      <button onclick='add_text(1)' class='current'>文本</button>
+                      <button onclick='default_add_text()'>文本</button>
                       <button onclick='default_add_img()'>图片</button>
-                      <input type="file" id='default_input'>
+                      <input type="file" id='default_input' style='display: none;'>
                     </section>
                     <section>
                       <ul id='details_ul'>
-                        <li></li>
+                        <li>123</li>
                       </ul>
                     </section>
                   </div>
@@ -538,7 +541,7 @@
                       </section>
                   </div>
                   <div>秀米</div>
-                  </section>
+                </section>
               </article>
               <!-- 分享设置 -->
               <article class='share_set current'>
