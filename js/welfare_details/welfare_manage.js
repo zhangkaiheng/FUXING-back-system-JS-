@@ -87,7 +87,7 @@ default_input.addEventListener('change', function () {
     new_img.src = e.target.result;
     new_img.style.width = '320px';
     phone_content.appendChild(new_img);
-    
+
   }
 })
 // $('#phone_content').sortable({
@@ -120,9 +120,9 @@ for (var i = 0; i < details_buttons.length; i++) {
     // delete_phone();
     (function delete_phone() {
       phone_content.innerHTML = '';
-    } ())
+    }())
   }
-};  
+};
 
 function details_change(obj) {
   for (var i = 0; i < details_buttons.length; i++) {
@@ -136,7 +136,7 @@ function details_change(obj) {
   }
 }
 $("#details_title button").eq(1).click(function () {
-  $('#custom_text_div').attr('class', 'current');  
+  $('#custom_text_div').attr('class', 'current');
 })
 // var phone_i = 0;
 // var details_ul = document.getElementById('details_ul');
@@ -216,7 +216,7 @@ $('#custom_button').on('click', 'button', function () {
     var new_i = document.createElement('i');
     // new_div.style.width = '220px';
     new_div.style.position = 'relative';
-    new_div.style.width = new_textarea.width + '10' +'px';
+    new_div.style.width = new_textarea.width + '10' + 'px';
     new_i.innerHTML = ' X ';
     new_i.style.backgroundColor = '#999999';
     new_div.appendChild(new_textarea);
@@ -230,24 +230,24 @@ $('#custom_button').on('click', 'button', function () {
       this.parentNode.parentNode.removeChild(this.parentNode);
     })
     setTimeout(() => {
-      $('#phone_content>div').draggable({ 
+      $('#phone_content>div').draggable({
         containment: 'parent',
         // scroll: true
       });
     }, 1);
-  }else if (index === 4) {    
+  } else if (index === 4) {
     $('#custom_bg_img').next().click(function () {
       $('#custom_bg_input').click();
     });
     $('#custom_bg_input').on('change', function () {
       var reader = new FileReader();
       reader.readAsDataURL(this.files[0]);
-      reader.onloadend = function (e) {        
+      reader.onloadend = function (e) {
         phone_content.style.background = "url(" + e.target.result + ") no-repeat";
         phone_content.style.backgroundSize = 'cover';
       }
     })
-  }else if (index === 5) {
+  } else if (index === 5) {
     var phone_span = document.createElement('span');
     phone_span.innerHTML = '我是按钮';
     phone_span.style.display = 'block';
@@ -270,8 +270,8 @@ $('#custom_button').on('click', 'button', function () {
       $('#phone_content>span').draggable();
       $('#phone_content>span').resizable();
     }, 1);
-  }  
-  
+  }
+
 })
 
 // 自定义样式-文本-input
@@ -309,10 +309,22 @@ function custom_add_text() {
 var custom_input = document.getElementById('custom_input');
 var custom_img = document.getElementById('custom_img');
 function change_custom_img() {
-  custom_input.click();  
+  custom_input.click();
 }
+
+//添加随机ID
+function random_id () {
+  var id = '';
+  var str = '7418520963'
+  for (var i = 0; i < 8; i++) {
+    id += str[~~(Math.random() * str.length)]
+  }
+  return id;
+}
+var currentID = 0;
 // 自定义样式添加图片
-custom_input.addEventListener('change', function () {
+custom_input.addEventListener('change', function () {  
+
   var reader = new FileReader();
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
@@ -325,6 +337,7 @@ custom_input.addEventListener('change', function () {
     phone_div.style.cssFloat = 'left';
     phone_img.src = e.target.result;
     phone_img.style.width = '100%';
+    phone_img.id = random_id();    
     phone_content.appendChild(phone_div);
     var new_i = document.createElement('i');
     new_i.innerHTML = ' X ';
@@ -333,11 +346,18 @@ custom_input.addEventListener('change', function () {
     new_i.addEventListener('click', function () {
       this.parentNode.parentNode.removeChild(this.parentNode);
     })
-    setTimeout(() => {
-      $('#phone_content>div').draggable();
-      $('#phone_content>div').resizable();
-    }, 1);
-  }
+  setTimeout(() => {
+    $('#phone_content>div').draggable();
+    $('#phone_content>div').resizable();
+    $('#phone_content>div').on('click', function () {
+      // console.log($(this).children('img')[0].src);
+      $('#custom_img').css("background-image", "");
+      $('#custom_img')[0].src = $(this).children('img')[0].src;
+      currentID = $(this).children('img').eq(0).attr('id');      
+      // console.log(currentID);
+    });
+  }, 1);
+}
 })
 //分享设置
 var share_input = document.getElementById('share_input');
@@ -356,3 +376,22 @@ share_input.addEventListener('change', function () {
     me.parentNode.childNodes[5].innerHTML = "更换图片";
   }
 })
+
+
+
+
+var phone_img = document.createElement('img');
+var phone_div = document.createElement('div');
+phone_div.appendChild(phone_img);
+phone_div.style.position = 'relative';
+phone_div.style.cssFloat = 'left';
+phone_img.style.width = '100%';
+phone_div.style.border = '2px dotted #F86F4D';
+var new_i = document.createElement('i');
+new_i.innerHTML = ' X ';
+new_i.style.backgroundColor = '#999999';
+phone_div.appendChild(new_i);
+new_i.addEventListener('click', function () {
+  this.parentNode.parentNode.removeChild(this.parentNode);
+})
+phone_content.appendChild(phone_div);
