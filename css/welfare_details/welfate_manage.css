@@ -27,7 +27,7 @@ input {
 /* 手机样式 */
 #new_welfare .new_phone{
   background: url('../../images/phone_bg.png') no-repeat 15px 0px;
-  height: 743px;
+  height: 660px;
   padding-top: 80px;
   /* padding-left: 70px; */
 }

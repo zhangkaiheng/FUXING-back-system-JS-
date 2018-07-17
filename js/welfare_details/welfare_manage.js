@@ -107,13 +107,13 @@ function default_add_text() {
   new_p.style.marginBottom = '0px';
   new_p.style.resize = 'none';
   phone_content.appendChild(new_p);
-  // setTimeout(() => {
-  //   $('#phone_content>p').draggable();
-  // }, 1);
+
 }
 // 切换样式
 var details_buttons = document.getElementById("details_title").getElementsByTagName("button");
 var details_divs = document.getElementById("details_content").getElementsByTagName("div");
+console.log(details_divs);
+
 
 for (var i = 0; i < details_buttons.length; i++) {
   details_buttons[i].onclick = function () {
@@ -133,10 +133,7 @@ function details_change(obj) {
   }
 }
 $("#details_title button").eq(1).click(function () {
-  console.log(1);
-  setTimeout(() => {
-    details_divs[0].click();
-  }, 1);
+  $('#custom_text_div').attr('class', 'current');  
 })
 // var phone_i = 0;
 // var details_ul = document.getElementById('details_ul');
@@ -210,7 +207,10 @@ function custom_change(obj) {
     }
   }
 }
-
+$('custom_button button').eq(1).click(function () {
+  console.log(1);
+  
+})
 
 // 自定义样式-文本-input
 var custom_text_input = document.getElementById("custom_text_input").getElementsByTagName("input");

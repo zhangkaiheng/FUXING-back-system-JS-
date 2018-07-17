@@ -73,7 +73,7 @@
         <div id="new_welfare" class='row-fluid'>
           <!-- 手机展示 -->
           <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' >
-            <div class='phone_content' style='width: 320px;height: 480px;margin: 84px 0 0 43px;border: 13px solid teal;
+            <div class='phone_content' style='width: 320px;height: 480px;margin: 12px 0 0 40px;
             ' id='phone_content'>
             </div>
           </div>
@@ -92,7 +92,7 @@
               <span>
                 <i></i> 分享设置</span>
             </div>
-            <div class="new_detail" style='background: white;height: 570px;' id="new_detail">
+            <div class="new_detail" style='background: white;height: 490px;' id="new_detail">
               <!-- 基础设置 -->
               <article class="current basic_set" style='margin-left: 60px;'>
                 <section style='height: 57px;'>
@@ -317,8 +317,8 @@
                 <section id='details_content'>
                   <!-- 默认样式 -->
                   <div class='current'>
-                    <section style='margin-left: 92px;'>
-                      <span>
+                    <section style='border-bottom: 1px solid #ECEAEA;height: 60px;'>
+                      <span style="margin-left: 92px;">
                         <i>*</i> 添加组件：</span>
                       <button onclick='default_add_text()'>文本</button>
                       <button onclick='default_add_img()'>图片</button>
@@ -332,8 +332,8 @@
                   </div>
                   <!-- 自定义样式 -->
                   <div id='details_custom'>
-                    <section id='custom_button' style='border-bottom: 1px solid #ECEAEA;height: 60px;margin-left: 94px;'>
-                      <span>
+                    <section id='custom_button' style='border-bottom: 1px solid #ECEAEA;height: 60px;'>
+                      <span style="margin-left: 94px;">
                         <i>*</i> 添加组件：</span>
                       <button onclick='add_text(1)' class="current">文本</button>
                       <button onclick='add_text(2)'>图片</button>
@@ -343,7 +343,7 @@
                     </section>
                     <section id='custom_div' style='margin-left: 125px;'>
                       <!-- 自定义样式-文本 -->
-                      <div class='current'>
+                      <div class='current' id='custom_text_div'>
                         <section style='width: 60%;padding-top: 30px;display: inline-block;'>
                           <span>
                             <i style='color: #f86f4d;'>*</i> 字体：</span>
