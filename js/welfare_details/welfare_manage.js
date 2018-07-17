@@ -207,7 +207,6 @@ function custom_change(obj) {
     }
   }
 }
-// 添加关闭i
 
 $('#custom_button').on('click', 'button', function () {
   var index = $(this).index();
@@ -232,10 +231,9 @@ $('#custom_button').on('click', 'button', function () {
     })
     setTimeout(() => {
       $('#phone_content>div').draggable({ 
-        containment: '#phone_content',
-        scroll: true
+        containment: 'parent',
+        // scroll: true
       });
-      $('#phone_content>div').resizable();
     }, 1);
   }else if (index === 4) {    
     $('#custom_bg_img').next().click(function () {
