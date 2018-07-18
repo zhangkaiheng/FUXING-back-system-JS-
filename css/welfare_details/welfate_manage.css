@@ -38,6 +38,9 @@ input {
 #new_welfare .new_phone #phone_content i{
   display: none;
 }
+/* #new_welfare .new_phone #phone_content div:hover{
+  border: 2px dotted #F86F4D;
+} */
 #new_welfare .new_phone #phone_content div:hover>i{
   display: block;
   width: 20px;
@@ -49,6 +52,7 @@ input {
   top: -10px;
   text-align: center;
   line-height: 20px;
+  
 }
 #new_welfare .new_phone #phone_content span{
   background: green;
