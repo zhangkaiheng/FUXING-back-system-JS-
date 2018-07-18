@@ -102,20 +102,20 @@ function default_add_text() {
   new_p.style.marginBottom = '0px';
   new_p.style.resize = 'none';
   new_p.id = 'p_' + random_id();
-  current_defaultID = new_p.id;
+  current_defaultID = new_p.id;  
   phone_content.appendChild(new_p);
-  // details_li.innerHTML = '<input tpye="text" onkeyup="change_text(value)" id="input_' + current_defaultID + '"/>';
+  details_li.innerHTML = '<input tpye="text" onkeyup="change_text(value)" id="input_' + current_defaultID + '"/>';
   details_ul.appendChild(details_li);
 }
-// var data = {};
-// Object.defineProperty(data, "test", {
-//   set: function (newVal) {
-//     document.getElementById("p_" + current_defaultID).innerHTML = newVal;
-//   }
-// })
-// function change_text(e) {
-//   data.test = e;
-// }
+var data = {};
+Object.defineProperty(data, "test", {
+  set: function (newVal) {
+    document.getElementById(current_defaultID).innerHTML = newVal;
+  }
+})
+function change_text(e) {
+  data.test = e;
+}
 // 切换样式
 var details_buttons = document.getElementById("details_title").getElementsByTagName("button");
 var details_divs = document.getElementById("details_content").getElementsByTagName("div");
