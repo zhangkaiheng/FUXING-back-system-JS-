@@ -90,25 +90,32 @@ default_input.addEventListener('change', function () {
 
   }
 })
-// $('#phone_content').sortable({
-//   scroll: true
-// })
-// $('#phone_content>p').draggable({
-//   scroll: true
-// });
-// $('#phone_content>p').onload('click', function () {
-//   $(this).draggable();
-// })
+
 // 添加文本
 function default_add_text() {
+  var details_ul = document.getElementById('details_ul');
   var new_p = document.createElement('p');
+  var details_li = document.createElement('li');
+
   new_p.style.height = '30px';
   new_p.style.border = '1px solid blue';
   new_p.style.marginBottom = '0px';
   new_p.style.resize = 'none';
+  new_p.id = 'p_' + random_id();
+  current_defaultID = new_p.id;
   phone_content.appendChild(new_p);
-
+  // details_li.innerHTML = '<input tpye="text" onkeyup="change_text(value)" id="input_' + current_defaultID + '"/>';
+  details_ul.appendChild(details_li);
 }
+// var data = {};
+// Object.defineProperty(data, "test", {
+//   set: function (newVal) {
+//     document.getElementById("p_" + current_defaultID).innerHTML = newVal;
+//   }
+// })
+// function change_text(e) {
+//   data.test = e;
+// }
 // 切换样式
 var details_buttons = document.getElementById("details_title").getElementsByTagName("button");
 var details_divs = document.getElementById("details_content").getElementsByTagName("div");
@@ -186,6 +193,7 @@ $("#details_title button").eq(1).click(function () {
 // function change_text(e) {
 //   data.test = e;
 // }
+
 // 自定义样式
 var custom_button = document.getElementById("custom_button").getElementsByTagName("button");
 var custom_div = document.getElementById("custom_div").getElementsByTagName("div");
@@ -237,7 +245,7 @@ $('#custom_button').on('click', 'button', function () {
         containment: 'parent',
         // scroll: true
       });
-      
+
     }, 1);
   } else if (index === 4) {
     $('#custom_bg_img').next().click(function () {
@@ -319,7 +327,7 @@ function change_custom_img() {
 }
 
 //添加随机ID
-function random_id () {
+function random_id() {
   var id = '';
   var str = '7418520963'
   for (var i = 0; i < 8; i++) {
@@ -328,8 +336,9 @@ function random_id () {
   return id;
 }
 var currentID = 0;
+var current_defaultID = 0;
 // 自定义样式添加图片
-custom_input.addEventListener('change', function () {  
+custom_input.addEventListener('change', function () {
   var reader = new FileReader();
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
@@ -342,7 +351,7 @@ custom_input.addEventListener('change', function () {
     phone_div.style.display = 'inline-block';
     phone_img.src = e.target.result;
     phone_img.style.width = '100%';
-    phone_img.id = random_id();    
+    phone_img.id = random_id();
     phone_content.appendChild(phone_div);
     var new_i = document.createElement('i');
     new_i.innerHTML = ' X ';
@@ -351,23 +360,23 @@ custom_input.addEventListener('change', function () {
     new_i.addEventListener('click', function () {
       this.parentNode.parentNode.removeChild(this.parentNode);
     })
-  setTimeout(() => {
-    $('#phone_content>div').draggable();
-    $('#phone_content>div').resizable({});
-    $('#phone_content>div').on('click', function () {
-      // console.log($(this).children('img')[0].src);
-      $('#custom_img').css("background-image", "");
-      $('#custom_img')[0].src = $(this).children('img')[0].src;
-      currentID = $(this).children('img').eq(0).attr('id');
-    });
-  }, 1);
-}
+    setTimeout(() => {
+      $('#phone_content>div').draggable();
+      $('#phone_content>div').resizable({});
+      $('#phone_content>div').on('click', function () {
+        // console.log($(this).children('img')[0].src);
+        $('#custom_img').css("background-image", "");
+        $('#custom_img')[0].src = $(this).children('img')[0].src;
+        currentID = $(this).children('img').eq(0).attr('id');
+      });
+    }, 1);
+  }
 })
 $('#phone_content>div').on('focus', function () {
   $(this).css('border', '2px dotted #F86F4D')
 })
 // 更换图片
-function custom_change_img () {
+function custom_change_img() {
   $('#custom_change_input').click();
 }
 
