@@ -82,12 +82,14 @@ default_input.addEventListener('change', function () {
   var reader = new FileReader();
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
-    console.log(223);
     var new_img = document.createElement('img');
     new_img.src = e.target.result;
     new_img.style.width = '320px';
     phone_content.appendChild(new_img);
-
+    setTimeout(() => {
+      $('#phone_content').sortable();
+    
+    }, 1);
   }
 })
 
@@ -98,23 +100,28 @@ function default_add_text() {
   var details_li = document.createElement('li');
 
   new_p.style.height = '30px';
-  new_p.style.border = '1px solid blue';
+  new_p.style.lineHeight = '30px';
+  new_p.style.border = '2px dotted #f86f4d';
   new_p.style.marginBottom = '0px';
   new_p.style.resize = 'none';
-  new_p.id = 'p_' + random_id();
-  current_defaultID = new_p.id;  
+  current_defaultID = random_id();
+  new_p.id = 'p_' + current_defaultID;
   phone_content.appendChild(new_p);
-  details_li.innerHTML = '<input tpye="text" onkeyup="change_text(value)" id="input_' + current_defaultID + '"/>';
+  details_li.innerHTML = '<input style="margin-bottom: 10px" tpye="text" onkeyup="change_text(value, id)" id="input_' + current_defaultID + '"/>';
   details_ul.appendChild(details_li);
+  setTimeout(() => {
+    $('#phone_content').sortable();   
+  }, 1);
 }
-var data = {};
-Object.defineProperty(data, "test", {
-  set: function (newVal) {
-    document.getElementById(current_defaultID).innerHTML = newVal;
+function change_text (value, id) {
+  var value = value;
+  var input_id = id; 
+  var ps = document.getElementById('phone_content').getElementsByTagName('p');
+  for (let i = 0; i < ps.length; i++) {
+    if (input_id.slice(6) === ps[i].id.slice(2)) {
+      ps[i].innerHTML = value;
+    }
   }
-})
-function change_text(e) {
-  data.test = e;
 }
 // 切换样式
 var details_buttons = document.getElementById("details_title").getElementsByTagName("button");
