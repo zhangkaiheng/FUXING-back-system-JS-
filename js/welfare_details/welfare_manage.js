@@ -20,8 +20,6 @@ function manage_change(obj) {
   }
 }
 //切换title背景图状态
-
-
 for (let i = 0; i < spans.length; i++) {
   spans[i].addEventListener('click', function () {
     this.style.backgroundImage = "url('icons/mouse_click_" + i + ".png')"
@@ -71,55 +69,129 @@ new_input.addEventListener('change', function () {
 })
 //福利详情
 // 默认样式
+// 切换文本和图片
+var default_title = document.getElementById('default_title').getElementsByTagName('button');
+var default_content = document.getElementById('default_content').getElementsByTagName('section');
+
+for (var i = 0; i < default_title.length; i++) {
+  default_title[i].onclick = function () {
+    default_change(this);
+  }
+}
+
+function default_change(obj) {
+  for (var i = 0; i < default_title.length; i++) {
+    if (default_title[i] == obj) {
+      $("#default_title button").eq(i).addClass('current');
+      $("#default_content section").eq(i).addClass('current');
+    } else {
+      $("#default_title button").eq(i).removeClass('current');
+      $("#default_content section").eq(i).removeClass('current');
+    }
+  }
+}
+
 // 添加图片
 var default_input = document.getElementById('default_input');
 var phone_content = document.getElementById('phone_content');
 function default_add_img() {
   default_input.click();
 }
-
+var default_img_id = 0;
 default_input.addEventListener('change', function () {
   var reader = new FileReader();
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
     var new_img = document.createElement('img');
+    var new_div = document.createElement('div');
+    var new_i = document.createElement('i');
+    // var details_li = document.createElement('li');
+
     new_img.src = e.target.result;
     new_img.style.width = '320px';
-    phone_content.appendChild(new_img);
+    new_img.id = 'img_' + random_id();
+    new_i.style.backgroundColor = '#cccccc';
+    new_div.style.position = 'relative';
+    new_i.innerHTML = ' X ';
+    new_div.appendChild(new_img);
+    new_div.appendChild(new_i);
+    phone_content.appendChild(new_div);
+    $('#default_img')[0].src = e.target.result;
+    new_i.addEventListener('click', function () {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    })
+    // details_ul.appendChild(details_li);
     setTimeout(() => {
       $('#phone_content').sortable();
-    
+      $('#phone_content>div').on('click', function () {
+        $('#default_img')[0].src = $(this).children('img')[0].src;
+        default_img_id = $(this).children('img').attr('id');
+        // console.log(default_img_id);
+      })
     }, 1);
   }
 })
-
+// 默认样式更换图片
+$('#default_change_img').on('click', function () {
+  $('#default_change_input').click();
+})
+$('#default_change_input').on('change', function () {
+  var reader = new FileReader();
+  reader.readAsDataURL(this.files[0]);
+  reader.onloadend = function (e) {
+    var new_img = document.createElement('img');
+    var src = e.target.result;
+    $('#' + default_img_id).attr('src', src);
+    $('#default_img').attr('src', src);
+  }
+})
 // 添加文本
+$('#default_button_text').on('click', default_add_text);
 function default_add_text() {
   var details_ul = document.getElementById('details_ul');
   var new_p = document.createElement('p');
   var details_li = document.createElement('li');
-
-  new_p.style.height = '30px';
-  new_p.style.lineHeight = '30px';
-  new_p.style.border = '2px dotted #f86f4d';
-  new_p.style.marginBottom = '0px';
-  new_p.style.resize = 'none';
+  var new_i = document.createElement('i');
+  var new_div = document.createElement('div');
+  new_i.style.backgroundColor = '#cccccc';
+  new_i.style.top = '-5px';
+  new_i.style.right = '-5px';
+  new_div.style.height = '30px';
+  new_div.style.lineHeight = '30px';
+  new_div.style.border = '2px dotted #f86f4d';
+  // new_div.style.marginBottom = '5px';
+  new_div.style.position = 'relative';
+  // new_p.style.resize = 'none';
+  new_i.innerHTML = ' X ';
+  new_div.appendChild(new_i);
+  new_div.appendChild(new_p);
   current_defaultID = random_id();
   new_p.id = 'p_' + current_defaultID;
-  phone_content.appendChild(new_p);
+  phone_content.appendChild(new_div);
   details_li.innerHTML = '<input style="margin-bottom: 10px" tpye="text" onkeyup="change_text(value, id)" id="input_' + current_defaultID + '"/>';
+
+  var new_p_id = new_p.id;
+  new_i.addEventListener('click', function () {
+    this.parentNode.parentNode.removeChild(this.parentNode);
+    var inputs = document.getElementById('details_ul').getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+      if (new_p_id.slice(2) === inputs[i].id.slice(6)) {
+        inputs[i].parentNode.parentNode.removeChild(inputs[i].parentNode);
+      }
+    }
+  })
   details_ul.appendChild(details_li);
   setTimeout(() => {
-    $('#phone_content').sortable();   
+    $('#phone_content').sortable();
   }, 1);
 }
-function change_text (value, id) {
+function change_text(value, id) {
   var value = value;
-  var input_id = id; 
+  var input_id = id;
   var ps = document.getElementById('phone_content').getElementsByTagName('p');
   for (let i = 0; i < ps.length; i++) {
     if (input_id.slice(6) === ps[i].id.slice(2)) {
-      ps[i].innerHTML = value;
+      ps[i].innerText = value;
     }
   }
 }
@@ -276,6 +348,8 @@ $('#custom_button').on('click', 'button', function () {
     phone_span.style.lineHeight = '40px';
     phone_span.style.backgroundColor = '#cccccc';
     phone_span.style.position = 'relative';
+
+    phone_span.id = 'btn_' + random_id();
     phone_content.appendChild(phone_span);
 
     var new_i = document.createElement('i');
@@ -288,11 +362,22 @@ $('#custom_button').on('click', 'button', function () {
     setTimeout(() => {
       $('#phone_content>span').draggable();
       $('#phone_content>span').resizable();
+      $('#phone_content>span').on('click', function () {
+        current_btn_ID = $(this)[0].id;
+        $('#btn_input')[0].value = $(this)[0].firstChild.nodeValue;
+      })
     }, 1);
   }
-
 })
-
+// 更换按钮内容
+$('#btn_input').on('change', function () {
+  $('#' + current_btn_ID)[0].innerHTML = this.value;
+  $('#btn_input')[0].value = '';
+})
+// 更换按钮颜色
+function change_btn_color(e) {
+  $('#' + current_btn_ID).css('backgroundColor', e);
+}
 // 自定义样式-文本-input
 var custom_text_input = document.getElementById("custom_text_input").getElementsByTagName("input");
 var custom_text_p = document.getElementById("custom_text_p").getElementsByTagName('p');
@@ -344,6 +429,7 @@ function random_id() {
 }
 var currentID = 0;
 var current_defaultID = 0;
+var current_btn_ID = 0;
 // 自定义样式添加图片
 custom_input.addEventListener('change', function () {
   var reader = new FileReader();
@@ -358,7 +444,7 @@ custom_input.addEventListener('change', function () {
     phone_div.style.display = 'inline-block';
     phone_img.src = e.target.result;
     phone_img.style.width = '100%';
-    phone_img.id = random_id();
+    phone_img.id = 'img_' + random_id();
     phone_content.appendChild(phone_div);
     var new_i = document.createElement('i');
     new_i.innerHTML = ' X ';
@@ -392,10 +478,14 @@ $('#custom_change_input').on('change', function () {
   reader.readAsDataURL(this.files[0]);
   reader.onloadend = function (e) {
     var src = e.target.result;
-    $("#" + currentID).attr("src", src)
-    // img.src = src;
+    $("#" + currentID).attr("src", src);
+    $('#custom_img')[0].src = src;
   }
 })
+//更换背景色
+function change_bg_color(e) {
+  $('#phone_content').css('backgroundColor', e);
+}
 //分享设置
 var share_input = document.getElementById('share_input');
 function share_upload_img() {

@@ -43,9 +43,9 @@ input {
 #new_welfare .new_phone #phone_content i{
   display: none;
 }
-/* #new_welfare .new_phone #phone_content div:hover{
+#new_welfare .new_phone #phone_content div:focus{
   border: 2px dotted #F86F4D;
-} */
+}
 #new_welfare .new_phone #phone_content div:hover>i{
   display: block;
   width: 20px;
@@ -53,11 +53,10 @@ input {
   border-radius: 50%;
   font-style: normal;
   position: absolute;
-  right: -10px;
-  top: -10px;
+  right: 0px;
+  top: 0px;
   text-align: center;
   line-height: 20px;
-  
 }
 #new_welfare .new_phone #phone_content span{
   background: green;
@@ -77,9 +76,6 @@ input {
 #new_welfare .new_phone #phone_content p{
   word-wrap: break-word;
 }
-#new_welfare .new_phone #phone_content p:hover{
-  border: 3px dotted #F86F4D;
-}
 #new_welfare .new_title span {
     width: 154px;
     height: 44px;
@@ -87,6 +83,28 @@ input {
     cursor: pointer;
     display: inline-block;
     margin-right: 4px;
+}
+/* 默认样式 */
+#details_content #default_content section{
+  display: none;
+}
+#details_content #default_content section:nth-of-type(2) button{
+  width: 120px;
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  height: 40px;
+  outline: none;
+  background: white;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+#details_content #default_content section:nth-of-type(2) button:hover{
+  background: #FFF0ED;
+  border: 1px solid #f86f4d;
+}
+#details_content #default_content section.current{
+  display: block;
 }
 /* 基本设置 */
 #new_welfare .new_detail .basic_set section{
@@ -481,9 +499,7 @@ input {
 #new_welfare .welfare_details #details_content div:nth-of-type(1) section:nth-of-type(1) i{
   color: #F86F4D;
 }
-#new_welfare .welfare_details #details_content span:nth-of-type(1){
-  /* margin-left: 43px !important; */
-}
+
 #new_welfare .welfare_details #details_content #details_ul li{
   position: relative;
 }

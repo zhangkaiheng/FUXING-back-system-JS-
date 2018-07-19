@@ -73,7 +73,7 @@
         </div>
         <div id="new_welfare" class='row-fluid'>
           <!-- 手机展示 -->
-          <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;' >
+          <div class='new_phone span4' style='margin-top: 20px;margin-bottom: 20px;'>
             <div class='phone_content' id='phone_content'>
             </div>
           </div>
@@ -96,7 +96,8 @@
               <!-- 基础设置 -->
               <article class="current basic_set" style='margin-left: 60px;'>
                 <section style='height: 57px;'>
-                  <span style='line-height: 57px;'><i>*</i> 福利类型：</span>
+                  <span style='line-height: 57px;'>
+                    <i>*</i> 福利类型：</span>
                   <button>
                     实物福利
                     <p>(物流发货)</p>
@@ -115,42 +116,48 @@
                   </button>
                 </section>
                 <section>
-                  <span style='float: left;'><i>*</i> 福利类型：</span>
+                  <span style='float: left;'>
+                    <i>*</i> 福利类型：</span>
                   <input type="radio" value='' id='basic_first' name='basic_template'>
                   <label for="basic_first">&nbsp;&nbsp;模版一(建议实物福利、虚拟福利使用)</label>
                   <input type="radio" value='' id='hasic_second' name='basic_template'>
                   <label for="hasic_second">&nbsp;&nbsp;模版二(建议报名、到店类使用)</label>
                 </section>
                 <section>
-                  <span style='float: left;'><i>*</i> 福利展示：</span>
+                  <span style='float: left;'>
+                    <i>*</i> 福利展示：</span>
                   <input type="radio" value='' id='basic_show_first' name='basic_template'>
                   <label for="basic_show_first">&nbsp;&nbsp;展示在福利大厅</label>
                   <input type="radio" value='' id='hasic_show_second' name='basic_template'>
                   <label for="hasic_show_second">&nbsp;&nbsp;只展示在对应福利分类下</label>
                 </section>
                 <section>
-                  <span><i>*</i> 所属企业：</span>
+                  <span>
+                    <i>*</i> 所属企业：</span>
                   <select name="" id="" style='height: 40px;width: 50%;'>
                     <option value="" selected>请选择福利所属企业</option>
                   </select>
                   <span>&nbsp;&nbsp;还没创建福利企业？快去创建吧～</span>
                 </section>
                 <section>
-                  <span><i>*</i> 福利分类：</span>
+                  <span>
+                    <i>*</i> 福利分类：</span>
                   <select name="" id="" style='height: 40px;width: 50%;'>
                     <option value="" selected>请选择福利分类</option>
                   </select>
                   <span>&nbsp;&nbsp;还没创建福利企业？快去创建吧～</span>
                 </section>
                 <section>
-                  <span><i>*</i> 限制地域：</span>
+                  <span>
+                    <i>*</i> 限制地域：</span>
                   <select name="" id="" style='height: 40px;width: 30%;'>
                     <option value="" selected>不限制</option>
                   </select>
                   <button style='color: #f86f4d;border: 0px;outline: none;margin-left: 10px;'>添加</button>
-                </section> 
+                </section>
                 <section>
-                  <span><i>*</i> 咨询电话：</span>
+                  <span>
+                    <i>*</i> 咨询电话：</span>
                   <input type="text" style='height: 40px;width: 50%;' placeholder="请输入咨询电话">
                 </section>
 
@@ -242,38 +249,40 @@
                 <section>
                   <span>
                     <i>*</i> 福利奖励标准：</span>
-                      <input type="radio" value='' id='reward_one' name='basic_template'>
-                      <label for="reward_one">&nbsp;&nbsp;有效购买</label>
-                      <input type="radio" value='' id='reward_two' name='basic_template'>
-                      <label for="reward_two">&nbsp;&nbsp;CPC有效点击</label>
-                      <input type="radio" value='' id='reward_three' name='basic_template'>
-                      <label for="reward_three">&nbsp;&nbsp;CPS 有效线上报名</label>
-                      <input type="radio" value='' id='reward_four' name='basic_template'>
-                      <label for="reward_four">&nbsp;&nbsp;CPA 浏览展示计费</label>
-                    <p style="margin-left: 114px;">
-                      <input type="radio" value='' id='reward_five' name='basic_template'>
-                      <label for="reward_five">&nbsp;&nbsp;卡券类型</label>
-                      <input type="radio" value='' id='reward_six' name='basic_template'>
-                      <label for="reward_six">&nbsp;&nbsp;票务</label>
-                      <input type="radio" value='' id='reward_seven' name='basic_template'>
-                      <label for="reward_seven">&nbsp;&nbsp;自定义票券</label>
-                    </p>
-                    <p style="margin-left: 114px;color: #999999;">(分享后成功购买即可获得相应福币奖励)</p>
+                  <input type="radio" value='' id='reward_one' name='basic_template'>
+                  <label for="reward_one">&nbsp;&nbsp;有效购买</label>
+                  <input type="radio" value='' id='reward_two' name='basic_template'>
+                  <label for="reward_two">&nbsp;&nbsp;CPC有效点击</label>
+                  <input type="radio" value='' id='reward_three' name='basic_template'>
+                  <label for="reward_three">&nbsp;&nbsp;CPS 有效线上报名</label>
+                  <input type="radio" value='' id='reward_four' name='basic_template'>
+                  <label for="reward_four">&nbsp;&nbsp;CPA 浏览展示计费</label>
+                  <p style="margin-left: 114px;">
+                    <input type="radio" value='' id='reward_five' name='basic_template'>
+                    <label for="reward_five">&nbsp;&nbsp;卡券类型</label>
+                    <input type="radio" value='' id='reward_six' name='basic_template'>
+                    <label for="reward_six">&nbsp;&nbsp;票务</label>
+                    <input type="radio" value='' id='reward_seven' name='basic_template'>
+                    <label for="reward_seven">&nbsp;&nbsp;自定义票券</label>
+                  </p>
+                  <p style="margin-left: 114px;color: #999999;">(分享后成功购买即可获得相应福币奖励)</p>
                 </section>
                 <section style='margin-left: 27px;'>
                   <span>
                     <i>*</i> 福币奖励：</span>
-                    <input type="radio" value='' id='reward_eight' name='basic_template'>
-                    <label for="reward_eight">&nbsp;&nbsp;不划分福星等级</label>
-                    <input type="radio" value='' id='reward_nine' name='basic_template'>
-                    <label for="reward_nine">&nbsp;&nbsp;划分福星等级</label>
-                    <p style='margin-top: 15px;margin-left: 85px;'>
-                      普通福星奖励 <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
-                    </p>
-                    <p style="margin-left: 85px;">
-                      金牌福星奖励 <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
-                    </p>
-                    <p style='color: #999999;margin-left: 85px;'>(最多不超过***个福币 注：2福币=1分钱)</p>
+                  <input type="radio" value='' id='reward_eight' name='basic_template'>
+                  <label for="reward_eight">&nbsp;&nbsp;不划分福星等级</label>
+                  <input type="radio" value='' id='reward_nine' name='basic_template'>
+                  <label for="reward_nine">&nbsp;&nbsp;划分福星等级</label>
+                  <p style='margin-top: 15px;margin-left: 85px;'>
+                    普通福星奖励
+                    <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
+                  </p>
+                  <p style="margin-left: 85px;">
+                    金牌福星奖励
+                    <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
+                  </p>
+                  <p style='color: #999999;margin-left: 85px;'>(最多不超过***个福币 注：2福币=1分钱)</p>
                 </section>
                 <section style='margin-left: 27px;margin-top: 25px;margin-bottom: 10px;'>
                   <span>
@@ -295,12 +304,13 @@
                   <input type="radio" value='' id='reward_fifteen' name='basic_template'>
                   <label for="reward_fifteen">&nbsp;&nbsp;每人每日限领</label>
                   <p style="margin-left: 90px;margin-top: 15px;">
-                     每日限领
+                    每日限领
                     <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 份福币奖励
                   </p>
                 </section>
                 <section>
-                  <span><i>*</i> 点击奖励福币：</span>
+                  <span>
+                    <i>*</i> 点击奖励福币：</span>
                   点击奖励
                   <input type="text" placeholder="请输入整数" style='display: inline-block;height: 40px;'> 个福币
                 </section>
@@ -317,16 +327,25 @@
                 <section id='details_content'>
                   <!-- 默认样式 -->
                   <div class='current'>
-                    <section style='border-bottom: 1px solid #ECEAEA;height: 60px;'>
+                    <section style='border-bottom: 1px solid #ECEAEA;height: 60px;' id='default_title'>
                       <span style="margin-left: 92px;">
                         <i>*</i> 添加组件：</span>
-                      <button onclick='default_add_text()'>文本</button>
-                      <button onclick='default_add_img()'>图片</button>
+                      <button id='default_button_text'>文本</button>
+                      <button>图片</button>
                       <input type="file" id='default_input' style='display: none;'>
                     </section>
-                    <section>
-                      <ul id='details_ul'>
-                      </ul>
+                    <section id='default_content'>
+                      <section class='current'>
+                        <ul id='details_ul'>
+                        </ul>
+                      </section>
+                      <section style='position: relative;margin: 40px 0 0 170px;'>
+                        <img src="" alt="" style='width: 150px;height: 150px;border: 1px solid #999999;display: inline-block;' id='default_img'>
+                        <button onclick='default_add_img()'>上传图片</button>
+                        <input type="file" style='display: none;' id='default_upload_input'>
+                        <button style='width: 120px;position: absolute;top: 100px;left: 200px;' id='default_change_img'>更换图片</button>
+                        <input type="file" style="display: none;" id='default_change_input'>
+                      </section>
                     </section>
                   </div>
                   <!-- 自定义样式 -->
@@ -368,14 +387,14 @@
                             <i>*</i> 点击事件：</span>
                           <input style="float: left;" type="radio" id='input_click1' name='input_click'>
                           <label for="input_click1" style="float: left;">跳转外链</label>
-                          <input style="float: left;"type="radio" id='input_click2' name='input_click'>
-                          <label style="float: left;"for="input_click2">拨打电话</label>
-                          <input style="float: left;"type="radio" id='input_click3' name='input_click'>
-                          <label style="float: left;"for="input_click3">发送短信</label>
-                          <input style="float: left;"type="radio" id='input_click4' name='input_click'>
-                          <label style="float: left;"for="input_click4">打开淘宝APP</label>
-                          <input style="float: left;"type="radio" id='input_click5' name='input_click'>
-                          <label style="float: left;"for="input_click5">播放视频</label>
+                          <input style="float: left;" type="radio" id='input_click2' name='input_click'>
+                          <label style="float: left;" for="input_click2">拨打电话</label>
+                          <input style="float: left;" type="radio" id='input_click3' name='input_click'>
+                          <label style="float: left;" for="input_click3">发送短信</label>
+                          <input style="float: left;" type="radio" id='input_click4' name='input_click'>
+                          <label style="float: left;" for="input_click4">打开淘宝APP</label>
+                          <input style="float: left;" type="radio" id='input_click5' name='input_click'>
+                          <label style="float: left;" for="input_click5">播放视频</label>
                         </section>
                         <section id='custom_text_p' style='margin-top: 60px;'>
                           <p class='current'>
@@ -465,7 +484,7 @@
                         <section style='float: left;width: 60%;padding-top: 40px;'>
                           <span>
                             <i style='color: #f86f4d;margin-bottom: 45px;'>*</i> 背景：</span>
-                          <input type="color" style='height: 30px;'>
+                          <input type="color" style='height: 30px;' onchange='change_bg_color(value)'>
                           <p>
                             <i style='color: #f86f4d;'>*</i> 透明度：
                             <input type="range" min="0" max="100">
@@ -486,12 +505,12 @@
                           <p>
                             <span style='line-height: 30px;'>
                               <i style='color: #f86f4d;'>*</i> 按钮文本：</span>
-                            <input type="text" style='height: 30px;'>
+                            <input type="text" style='height: 30px;' id='btn_input'>
                           </p>
                           <p>
                             <span style='line-height: 30px;'>
                               <i style='color: #f86f4d;'>*</i> 颜色插件：</span>
-                            <input type="color" style='height: 30px;'>
+                            <input type="color" style='height: 30px;' onchange='change_btn_color(value)'>
                           </p>
                         </section>
                         <section style='float: right;margin-right: 30px;'>
@@ -541,21 +560,22 @@
                       </section>
                   </div>
                   <div>秀米</div>
-                </section>
+                  </section>
               </article>
               <!-- 分享设置 -->
               <article class='share_set current'>
                 <section>
-                  <span style="float: left;"><i>*</i> 微信分享图标：</span>
-                    <img src="" alt="">
-                    <button onclick='share_upload_img()'>添加图片</button>
-                    <input type="file" style="display: none;" id='share_input'>
-                    <p style='color: #999999;margin: 20px 0 0 105px;'>建议尺寸：400*400像素，请上传格式为jpg、png、git的图片</p>
+                  <span style="float: left;">
+                    <i>*</i> 微信分享图标：</span>
+                  <img src="" alt="">
+                  <button onclick='share_upload_img()'>添加图片</button>
+                  <input type="file" style="display: none;" id='share_input'> 
+                  <p style='color: #999999;margin: 20px 0 0 105px;'>建议尺寸：400*400像素，请上传格式为jpg、png、git的图片</p>
                 </section>
                 <section style='overflow: hidden;'>
                   <span style='float: left;'>
                     <i>*</i> 微信分享标题：</span>
-                    <textarea style='float: left;resize:none;' name="" id="" cols="30" rows="4" placeholder="新东方儿童英语免费试听课"></textarea>
+                  <textarea style='float: left;resize:none;' name="" id="" cols="30" rows="4" placeholder="新东方儿童英语免费试听课"></textarea>
                 </section>
                 <section style='overflow: hidden;'>
                   <span style='float: left;'>
