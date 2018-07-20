@@ -148,8 +148,8 @@ $('#default_change_input').on('change', function () {
 // 添加文本
 $('#default_button_text').on('click', default_add_text);
 function default_add_text() {
+  var phone_content_children = document.getElementById('phone_content_children');
   var details_ul = document.getElementById('details_ul');
-  var new_p = document.createElement('p');
   var details_li = document.createElement('li');
   var new_i = document.createElement('i');
   var new_div = document.createElement('div');
@@ -159,39 +159,62 @@ function default_add_text() {
   new_div.style.height = '30px';
   new_div.style.lineHeight = '30px';
   new_div.style.border = '2px dotted #f86f4d';
+  // new_input.style.display ='block';
+  // new_input.style.width ='100%';
+  // new_input.style.height ='25px';
+  // new_input.style.border ='0px';
+  new_input.style.outline = 'none';
   // new_div.style.marginBottom = '5px';
   new_div.style.position = 'relative';
   // new_p.style.resize = 'none';
   new_i.innerHTML = ' X ';
-  new_div.appendChild(new_i);
-  new_div.appendChild(new_p);
+  // new_div.appendChild(new_input);
   current_defaultID = random_id();
-  new_p.id = 'p_' + current_defaultID;
-  phone_content.appendChild(new_div);
-  details_li.innerHTML = '<input style="margin-bottom: 10px" tpye="text" onkeyup="change_text(value, id)" id="input_' + current_defaultID + '"/>';
+  new_div.innerHTML = '<input tyle="text" onkeyup="change_text1(value, id)" style="display: block;width: 100%;height: 25px;border: 0px;outline: none;" id="phoneInput_' + current_defaultID + '"/>'
+  new_div.appendChild(new_i);
+  // new_input.id = 'phoneInput_' + current_defaultID;
+  phone_content_children.appendChild(new_div);
+  details_li.innerHTML = '<input style="margin-bottom: 10px" tpye="text" onkeyup="change_text(value, id)" id="ulInput_' + current_defaultID + '"/>';
 
-  var new_p_id = new_p.id;
   new_i.addEventListener('click', function () {
     this.parentNode.parentNode.removeChild(this.parentNode);
-    var inputs = document.getElementById('details_ul').getElementsByTagName('input');
-    for (let i = 0; i < inputs.length; i++) {
-      if (new_p_id.slice(2) === inputs[i].id.slice(6)) {
-        inputs[i].parentNode.parentNode.removeChild(inputs[i].parentNode);
+
+    var ul_inputs = document.getElementById('details_ul').getElementsByTagName('input');
+
+    for (var i = 0; i < ul_inputs.length; i++) {
+      if ($(this).prev()[0].id.slice(11) === ul_inputs[i].id.slice(8)) {
+        ul_inputs[i].parentNode.parentNode.removeChild(ul_inputs[i].parentNode);
       }
     }
   })
   details_ul.appendChild(details_li);
   setTimeout(() => {
-    $('#phone_content').sortable();
+    $('#phone_content_children').sortable();
   }, 1);
 }
-function change_text(value, id) {
-  var value = value;
-  var input_id = id;
-  var ps = document.getElementById('phone_content').getElementsByTagName('p');
-  for (let i = 0; i < ps.length; i++) {
-    if (input_id.slice(6) === ps[i].id.slice(2)) {
-      ps[i].innerText = value;
+//增加内容绑定
+function change_text1() {
+  var phone_inputs = document.getElementById('phone_content_children').getElementsByTagName('input');
+  var ul_inputs = document.getElementById('details_ul').getElementsByTagName('input');
+
+  for (var i = 0; i < phone_inputs.length; i++) {
+
+    if (phone_inputs[i].id.slice(11) == ul_inputs[i].id.slice(8)) {
+      ul_inputs[i].value = phone_inputs[i].value;
+    }
+  }
+
+}
+function change_text() {
+  console.log(2);
+
+  var phone_inputs = document.getElementById('phone_content_children').getElementsByTagName('input');
+  var ul_inputs = document.getElementById('details_ul').getElementsByTagName('input');
+
+  for (var i = 0; i < ul_inputs.length; i++) {
+
+    if (phone_inputs[i].id.slice(11) == ul_inputs[i].id.slice(8)) {
+      phone_inputs[i].value = ul_inputs[i].value;
     }
   }
 }

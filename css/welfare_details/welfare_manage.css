@@ -84,6 +84,42 @@ input {
     display: inline-block;
     margin-right: 4px;
 }
+#new_welfare #share_set{
+  background: url('../../images/share_bg.png') no-repeat;
+  width: 320px;
+  height: 480px;
+  margin: 8px 0 0 40px;
+  padding: 80px 0 0 55px;
+}
+#new_welfare #share_set .share_wrap{
+  border: 1px solid teal;
+  overflow: hidden;
+  height: 99px;
+  width: 226px;
+}
+#new_welfare #share_set .share_wrap{
+  padding: 5px;
+}
+#new_welfare #share_set .share_content{
+  position: relative;
+  height: 60px;
+}
+#new_welfare #share_set .share_wrap p{
+  margin-bottom: 5px;
+}
+#new_welfare #share_set .share_content p{
+  float: left;
+  font-size: 10px;
+  width: 155px;
+}
+#new_welfare #share_set .share_content img{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1px solid 
+  teal;
+  vertical-align: text-top;
+}
 /* 默认样式 */
 #details_content #default_content section{
   display: none;
